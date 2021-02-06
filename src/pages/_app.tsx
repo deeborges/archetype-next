@@ -10,6 +10,7 @@ function App({ Component, pageProps }: AppProps) {
         <title>Next.js archetype.</title>
         <link rel="shortcut icon" href="/assets/favicon.ico" />
         <link rel="apple-touch-icon" href="/assets/favicon.ico" />
+        <link rel="manifest" href="/manifest.json" />
         <meta
           name="description"
           title="A simple project starter to work with TypeScript, React, Styled Components, Storybook and Next.js"
