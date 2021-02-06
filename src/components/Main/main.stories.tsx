@@ -3,7 +3,16 @@ import Main from '.';
 
 export default {
   title: 'Main',
-  component: Main
+  component: Main,
+  args: {
+    title: 'default',
+    data: 'default'
+  }
 } as Meta;
 
-export const Presentation: Story = () => <Main />;
+export const Presentation: Story = (args) => <Main {...args} />;
+
+Presentation.args = {
+  title: 'Um título qualquer',
+  data: Date.now()
+};
