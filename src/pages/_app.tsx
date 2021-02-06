@@ -1,0 +1,24 @@
+import { AppProps } from 'next/app';
+import Head from 'next/head';
+
+import LayoutGlobal from 'layout/global';
+
+function App({ Component, pageProps }: AppProps) {
+  return (
+    <>
+      <Head>
+        <title>Next.js archetype.</title>
+        <link rel="shortcut icon" href="/assets/favicon.ico" />
+        <link rel="apple-touch-icon" href="/assets/favicon.ico" />
+        <meta
+          name="description"
+          title="A simple project starter to work with TypeScript, React, Styled Components, Storybook and Next.js"
+        />
+      </Head>
+      <LayoutGlobal />
+      <Component {...pageProps} />
+    </>
+  );
+}
+
+export default App;
