@@ -7,5 +7,13 @@ export default {
 } as Meta;
 
 export const Initial: Story = () => (
-  <Button color="default">Ola mundo novo</Button>
+  <Button color="danger" variant="outlined">
+    Ola mundo novo
+  </Button>
+);
+export const Danger: Story = () => (
+  <Button color="danger">Ola mundo novo</Button>
+);
+export const Primary: Story = () => (
+  <Button color="primary">Ola mundo novo</Button>
 );
