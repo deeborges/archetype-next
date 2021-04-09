@@ -12,4 +12,4 @@ export const Label: Story = () => (
   </Text>
 );
 
-export const SemVariant: Story = () => <Text tag="label">Label</Text>;
+export const SemVariant: Story = () => <Text tag="strong">Label</Text>;

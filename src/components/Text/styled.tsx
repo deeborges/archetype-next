@@ -58,7 +58,7 @@ const Span = styled.span`
 //   }
 // };
 
-export const Text = ({ children, as, color, variant }: Props) => {
+export const Text = (props: Props) => {
   switch (as) {
     case 'label':
       return <Label css={{}}>{children}</Label>;

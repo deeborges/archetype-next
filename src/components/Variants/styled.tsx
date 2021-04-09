@@ -19,7 +19,7 @@ export const styledText = ({ tag, variants }: Props) => styled(tag)<Props>`
     `}
 `;
 
-export const Text = ({ tag, children, variants, ...props }: Props) => {
-  const Text = styledText({ tag: tag, variants: variants, children: children });
-  return <Text {...props}>{children}</Text>;
+export const Text = (props: Props) => {
+  const Text = styledText({ ...props });
+  return <Text {...props}>{props.children}</Text>;
 };
