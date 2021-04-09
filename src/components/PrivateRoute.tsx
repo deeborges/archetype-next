@@ -20,4 +20,25 @@ const withAuth = (Component) => {
   return Auth;
 };
 
+export async function getServerSideProps(context) {
+  const sendRedirectLocation = (location) => {
+    res.writeHead(302, {
+      Location: location
+    });
+    res.end();
+    return { props: {} }; // stop execution
+  };
+
+  // some auth logic here
+  const isAuth = await authService('some_type_of_token');
+
+  if (!isAuth) {
+    sendRedirectLocation('/login');
+  }
+
+  return {
+    props: {} // will be passed to the page component as props
+  };
+}
+
 export default withAuth;
