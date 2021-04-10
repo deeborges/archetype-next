@@ -1,13 +1,11 @@
 import border from './border';
 import { opacity } from './opacity';
 import { responsivity } from './responsivity';
-import { typography } from './typography';
+import { font } from './font';
 
 export const defaultTokens = {
   border: border,
   opacity: opacity,
   responsivity: responsivity,
-  typography: typography
+  font: font
 };
-
-typography.weight[100];

@@ -1,70 +1,57 @@
-import React from 'react';
-import styled from 'styled-components';
+import styled, { css, DefaultTheme } from 'styled-components';
+import { TextProps } from '.';
 
-type tags =
-  | 'p'
-  | 'span'
-  | 'label'
-  | 'a'
-  | 'b'
-  | 'small'
-  | 'strong'
-  | 'i'
-  | 'heading-1';
+type modifiersProps = {
+  theme: DefaultTheme;
+} & Pick<TextProps, 'tag' | 'type'>;
 
-type Props = {
-  color: string;
-  size: string;
-  variant: string;
-  weight: string;
-  lineHeight: string;
-  as: tags;
-  children: React.ReactNode | string;
-};
-
-const Label = styled.label`
-  font-size: 12px;
-  color: red;
-`;
-
-const Paragraphy = styled.p`
-  font-size: 12px;
-  color: green;
-`;
-
-const Span = styled.span`
-  font-size: 12px;
-  color: black;
-`;
-
-// const getTextStyles = ({
-//   as,
-//   color,
-//   variant,
-//   children,
-//   lineHeight,
-//   size,
-//   weight
-// }: Props) => {
-//   switch (as) {
-//     case 'label':
-//       return styled.label`
-//         ${css`
-
-//         `}
-//       `;
-//     default:
-//       return '';
-//   }
-// };
-
-export const Text = (props: Props) => {
-  switch (as) {
-    case 'label':
-      return <Label css={{}}>{children}</Label>;
-    case 'span':
-      return <Span>{children}</Span>;
-    default:
-      return <Paragraphy>{children}</Paragraphy>;
+const modifiers = {
+  common: ({ type, theme }: modifiersProps) => {
+    switch (type) {
+      case 'body-1':
+        return css`
+          font-size: ${theme.font.size.large};
+          font-weight: ${theme.font.weight[400]};
+        `;
+      case 'body-2':
+        return css`
+          font-size: ${theme.font.size.medium};
+          font-weight: ${theme.font.weight[400]};
+        `;
+      case 'caption':
+        return css`
+          font-size: ${theme.font.size.small};
+          font-weight: ${theme.font.weight[400]};
+        `;
+      case 'label':
+        return css`
+          font-size: ${theme.font.size.medium};
+          font-weight: ${theme.font.weight[600]};
+        `;
+      case 'subtitle':
+        return css`
+          font-size: ${theme.font.size.large};
+          font-weight: ${theme.font.weight[600]};
+        `;
+      default:
+        return css`
+          font-size: ${theme.font.size.default};
+          font-weight: ${theme.font.weight[400]};
+        `;
+    }
   }
 };
+
+export const styledText = ({
+  tag = 'p',
+  type,
+  weight,
+  fontSize = 'default'
+}: TextProps) => styled(tag)`
+  ${({ theme }: modifiersProps) => css`
+    font-size: ${theme.font.size[fontSize]};
+    font-weight: ${theme.font.weight[400]};
+    ${type && modifiers.common};
+    ${weight && `font-weight: ${weight};`}
+  `}
+`;

@@ -4,6 +4,6 @@ export const opacity = {
     intense: 0.64,
     medium: 0.32,
     light: 0.16,
-    semitransparent: 0.08,
-  },
+    semitransparent: 0.08
+  }
 };

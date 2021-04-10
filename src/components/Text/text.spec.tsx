@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
-import Text from '.';
+import { Text } from '.';
 
-describe('Text', () => {
+describe('Variants', () => {
   it('', () => {});
 });
