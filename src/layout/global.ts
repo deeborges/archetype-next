@@ -8,7 +8,7 @@ const LayoutGlobal = createGlobalStyle`
   }
   html {
     font-family: 'Roboto' sans-serif;
-    font-size: 62.5%;
+    /* font-size: 62.5%; */
   }
 
   html, body, #__next {

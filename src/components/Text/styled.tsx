@@ -3,15 +3,15 @@ import { TextProps } from '.';
 
 type modifiersProps = {
   theme: DefaultTheme;
-} & Pick<TextProps, 'tag' | 'type'>;
+} & Pick<TextProps, 'tag' | 'type' | 'weight' | 'fontSize'>;
 
 const modifiers = {
-  common: ({ type, theme }: modifiersProps) => {
+  common: ({ type, theme, fontSize, weight }: modifiersProps) => {
     switch (type) {
       case 'body-1':
         return css`
-          font-size: ${theme.font.size.large};
-          font-weight: ${theme.font.weight[400]};
+          font-size: ${theme.font.size[fontSize || 'large']};
+          font-weight: ${theme.font.weight[weight || 400]};
         `;
       case 'body-2':
         return css`
@@ -34,10 +34,7 @@ const modifiers = {
           font-weight: ${theme.font.weight[600]};
         `;
       default:
-        return css`
-          font-size: ${theme.font.size.default};
-          font-weight: ${theme.font.weight[400]};
-        `;
+        return;
     }
   }
 };
@@ -45,13 +42,11 @@ const modifiers = {
 export const styledText = ({
   tag = 'p',
   type,
-  weight,
   fontSize = 'default'
 }: TextProps) => styled(tag)`
   ${({ theme }: modifiersProps) => css`
-    font-size: ${theme.font.size[fontSize]};
-    font-weight: ${theme.font.weight[400]};
+    ${!type && `font-size: ${theme.font.size[fontSize]}`};
+    ${!type && `font-weight: ${theme.font.weight[400]}`};
     ${type && modifiers.common};
-    ${weight && `font-weight: ${weight};`}
   `}
 `;

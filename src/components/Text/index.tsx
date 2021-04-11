@@ -1,7 +1,7 @@
 import { styledText } from './styled';
 
 export type TextProps = {
-  children: string;
+  children: string | React.ReactNode;
   fontSize?:
     | 'xxsmall'
     | 'xsmall'
@@ -15,7 +15,22 @@ export type TextProps = {
     | 'xl_4'
     | 'xl_5'
     | 'xl_6';
-  tag?: 'label' | 'p' | 'span';
+  tag?:
+    | 'label'
+    | 'p'
+    | 'span'
+    | 'hr'
+    | 'pre'
+    | 'b'
+    | 'strong'
+    | 'i'
+    | 'em'
+    | 'sub'
+    | 'sup'
+    | 'ins'
+    | 'del'
+    | 'small'
+    | 'mark';
   type?: 'subtitle' | 'label' | 'body-1' | 'body-2' | 'caption';
   weight?:
     | '100'
