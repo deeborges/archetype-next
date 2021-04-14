@@ -48,6 +48,55 @@ export const Scales: Story = () => (
           large
         </Button>
       </div>
+      <br />
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'row'
+        }}
+      >
+        <Button color="primary" size="x_small">
+          x small
+        </Button>
+        &nbsp;&nbsp;
+        <Button color="primary" size="small">
+          small
+        </Button>
+        &nbsp;&nbsp;
+        <Button color="primary" size="medium">
+          medium
+        </Button>
+        &nbsp;&nbsp;
+        <Button color="primary" size="large">
+          large
+        </Button>
+      </div>
+      <br />
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'row'
+        }}
+      >
+        <Button color="danger" size="x_small">
+          x small
+        </Button>
+        &nbsp;&nbsp;
+        <Button color="danger" size="small">
+          small
+        </Button>
+        &nbsp;&nbsp;
+        <Button color="danger" size="medium">
+          medium
+        </Button>
+        &nbsp;&nbsp;
+        <Button color="danger" size="large">
+          large
+        </Button>
+      </div>
+      <Button fullWidth color="danger">
+        Full
+      </Button>
     </div>
 
     <div>

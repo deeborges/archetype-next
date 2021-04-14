@@ -76,6 +76,10 @@ export const Content = styled.button<ContentProps>`
     &:disabled {
       cursor: not-allowed;
       filter: brightness(0.7);
+
+      &:hover {
+        filter: brightness(0.7);
+      }
     }
 
     &:hover {
