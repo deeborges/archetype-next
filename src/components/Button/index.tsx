@@ -25,7 +25,13 @@ const Button = ({
   children,
   ...props
 }: ButtonProps) => (
-  <Content color={color} fullWidth={fullWidth} {...props}>
+  <Content
+    color={color}
+    fullWidth={fullWidth}
+    size={size}
+    variant={variant}
+    {...props}
+  >
     {!!leftIcon && leftIcon}
     {!!children && <span>{children}</span>}
     {!!rightIcon && rightIcon}

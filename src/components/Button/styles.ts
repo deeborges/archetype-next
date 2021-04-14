@@ -2,9 +2,16 @@ import styled, { css } from 'styled-components';
 import { ButtonProps } from '.';
 
 // eslint-disable-next-line @typescript-eslint/ban-types
-type ContentProps = {} & Pick<ButtonProps, 'fullWidth' | 'color'>;
+type ContentProps = {} & Pick<
+  ButtonProps,
+  'fullWidth' | 'color' | 'size' | 'variant'
+>;
 
 const modifiers = {
+  x_small: () => css`
+    height: 2rem;
+    width: 12rem;
+  `,
   fullWidth: () => css`
     width: 100%;
   `
@@ -24,13 +31,14 @@ const getColorText = ({ color }: Pick<ButtonProps, 'color'>) => {
 };
 
 export const Content = styled.button<ContentProps>`
-  ${({ fullWidth, color }) => css`
+  ${({ fullWidth, size, variant, color }) => css`
     border: none;
     color: ${!!color && getColorText};
     cursor: pointer;
-    ${!!fullWidth && modifiers.fullWidth()};
-    height: 42px;
     background-color: black;
     padding: 12px;
+
+    ${!!size && modifiers.x_small}
+    ${!!fullWidth && modifiers.fullWidth};
   `}
 `;

@@ -12,8 +12,11 @@ export const Initial: Story = () => (
   </Button>
 );
 export const Danger: Story = () => (
-  <Button color="danger">Ola mundo novo</Button>
+  <Button color="default">Ola mundo novo</Button>
 );
 export const Primary: Story = () => (
   <Button color="primary">Ola mundo novo</Button>
 );
+
+export const ButtonXSmall: Story = () => <Button size="x_small">full</Button>;
+export const ButtonFull: Story = () => <Button fullWidth>full</Button>;
