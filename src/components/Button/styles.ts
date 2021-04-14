@@ -13,6 +13,7 @@ const modifiers = {
     width: 12rem;
   `,
   fullWidth: () => css`
+    height: auto;
     width: 100%;
   `
 };
@@ -24,7 +25,7 @@ const getColorText = ({ color }: Pick<ButtonProps, 'color'>) => {
     case 'danger':
       return '#fff';
     case 'primary':
-      return 'blue';
+      return '#fff';
     default:
       return '#212121';
   }
@@ -32,13 +33,28 @@ const getColorText = ({ color }: Pick<ButtonProps, 'color'>) => {
 
 export const Content = styled.button<ContentProps>`
   ${({ fullWidth, size, variant, color }) => css`
+    // TODO
+    grid-auto-flow: column;
+    align-content: center;
+    align-items: center;
+    display: grid;
+
     border: none;
     color: ${!!color && getColorText};
     cursor: pointer;
-    background-color: black;
-    padding: 12px;
+    background-color: #212121;
+    padding: 1rem 1.5rem;
 
     ${!!size && modifiers.x_small}
     ${!!fullWidth && modifiers.fullWidth};
+
+    &:disabled {
+      cursor: not-allowed;
+    }
+
+    &:hover {
+      filter: brightness(0.8);
+      transition: 0.3s;
+    }
   `}
 `;
