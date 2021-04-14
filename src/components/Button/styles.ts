@@ -12,22 +12,47 @@ const modifiers = {
     height: 2rem;
     width: 12rem;
   `,
+  small: () => css`
+    height: 3rem;
+    width: 12rem;
+  `,
+  medium: () => css`
+    height: 4rem;
+    width: 12rem;
+  `,
+  large: () => css`
+    height: 5rem;
+    width: 12rem;
+  `,
   fullWidth: () => css`
     height: auto;
     width: 100%;
   `
 };
 
+const getBackgroundColor = ({ color }: Pick<ButtonProps, 'color'>) => {
+  switch (color) {
+    case 'default':
+      return '#25bb89';
+    case 'danger':
+      return '#e05b61';
+    case 'primary':
+      return '#095a93';
+    default:
+      return '#fff';
+  }
+};
+
 const getColorText = ({ color }: Pick<ButtonProps, 'color'>) => {
   switch (color) {
     case 'default':
-      return 'green';
+      return '#fff';
     case 'danger':
-      return '#fff';
+      return '#8a1c26';
     case 'primary':
-      return '#fff';
+      return '#f4f8fa';
     default:
-      return '#212121';
+      return '#fff';
   }
 };
 
@@ -40,12 +65,12 @@ export const Content = styled.button<ContentProps>`
     display: grid;
 
     border: none;
-    color: ${!!color && getColorText};
     cursor: pointer;
-    background-color: #212121;
+    color: ${!!color && getColorText};
+    background-color: ${getBackgroundColor};
     padding: 1rem 1.5rem;
 
-    ${!!size && modifiers.x_small}
+    ${!!size && modifiers[size]};
     ${!!fullWidth && modifiers.fullWidth};
 
     &:disabled {

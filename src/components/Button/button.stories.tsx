@@ -9,9 +9,8 @@ export default {
 export const Colors = () => (
   <div
     style={{
-      display: 'grid',
-      gridAutoFlow: 'column',
-      gap: 12
+      display: 'flex',
+      flexDirection: 'row'
     }}
   >
     <Button color="danger">danger</Button>
@@ -23,10 +22,60 @@ export const Colors = () => (
   </div>
 );
 
-export const Initial: Story = () => (
-  <Button color="danger" variant="outlined">
-    Ola mundo novo
-  </Button>
+export const Scales: Story = () => (
+  <>
+    <div>
+      <p>Normals</p> <br />
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'row'
+        }}
+      >
+        <Button color="default" size="x_small">
+          x small
+        </Button>
+        &nbsp;&nbsp;
+        <Button color="default" size="small">
+          small
+        </Button>
+        &nbsp;&nbsp;
+        <Button color="default" size="medium">
+          medium
+        </Button>
+        &nbsp;&nbsp;
+        <Button color="default" size="large">
+          large
+        </Button>
+      </div>
+    </div>
+
+    <div>
+      <p>Com loadings</p> <br />
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'row'
+        }}
+      >
+        <Button color="default" size="x_small" loading>
+          x small
+        </Button>
+        &nbsp;&nbsp;
+        <Button color="default" size="small" loading>
+          small
+        </Button>
+        &nbsp;&nbsp;
+        <Button color="default" size="medium" loading>
+          medium
+        </Button>
+        &nbsp;&nbsp;
+        <Button color="default" size="large" loading>
+          large
+        </Button>
+      </div>
+    </div>
+  </>
 );
 export const Danger: Story = () => (
   <Button color="default">Ola mundo novo</Button>
