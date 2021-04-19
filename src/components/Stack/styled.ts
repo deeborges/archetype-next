@@ -1,8 +1,16 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const Content = styled.div`
+import { StackProps } from '.';
+
+export const Content = styled.div<StackProps>`
   & > * {
-    margin-top: 0.8rem;
+    ${({ margin, marginBottom, marginLeft, marginTop, marginRight }) => css`
+      ${!margin && `margin: ${margin}`}
+      ${!marginBottom && `margin-bottom: ${marginBottom}`}
+      ${!marginLeft && `margin-left: ${marginLeft}`}
+      ${!marginTop && `margin-top: ${marginTop}`}
+      ${!marginRight && `margin-right: ${marginRight}`}
+    `}
 
     :first-child {
       margin-top: 0;
