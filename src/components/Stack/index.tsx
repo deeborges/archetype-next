@@ -13,7 +13,7 @@ export type StackProps = {
 export const Stack = ({
   children,
   margin,
-  marginBottom,
+  marginBottom = '0.8rem',
   marginLeft,
   marginTop,
   marginRight
