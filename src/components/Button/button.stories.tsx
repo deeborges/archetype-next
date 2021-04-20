@@ -1,10 +1,17 @@
 import { Meta, Story } from '@storybook/react/types-6-0';
+import { ActivedLink } from '../ActiveLink';
 import Button from '.';
 
 export default {
   title: 'Colibri/Components/Button',
   component: Button
 } as Meta;
+
+export const Link = () => (
+  <ActivedLink href="/ali" as="a">
+    <Button>Active link</Button>
+  </ActivedLink>
+);
 
 export const Colors = () => (
   <div
