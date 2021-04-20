@@ -1,31 +1,56 @@
-import { InputElementProps } from '@chakra-ui/react';
-import { ForwardRefRenderFunction } from 'react';
-import { forwardRef } from 'react';
-import { HTMLAttributes } from 'react';
-import { Content } from './styled';
+import {
+  forwardRef,
+  InputHTMLAttributes,
+  ForwardRefRenderFunction
+} from 'react';
+import {
+  Content,
+  Message,
+  Input as StyledInput,
+  Label,
+  ContentProps,
+  MessageProps,
+  InputLabelProps
+} from './styled';
 
 export type InputProps = {
   name: string;
   label?: string;
   message?: string;
   variant?: 'focused' | 'actived' | 'inactive' | 'hover' | 'error' | 'disabled';
-} & HTMLAttributes<InputElementProps>;
+  contentProps?: ContentProps;
+  labelProps?: InputLabelProps;
+  messageProps?: MessageProps;
+} & InputHTMLAttributes<HTMLInputElement>;
 
 const InputBase: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
-  { name, label, message, variant = 'inactive', ...rest },
+  {
+    name,
+    label,
+    message,
+    variant = 'inactive',
+    contentProps,
+    labelProps,
+    messageProps,
+    ...rest
+  },
   ref
 ) => (
-  <Content>
-    {!!label && <label htmlFor={name}>{label}</label>}
-    <Input
+  <Content {...contentProps}>
+    {!!label && (
+      <Label htmlFor={name} {...labelProps}>
+        {label}
+      </Label>
+    )}
+    <StyledInput
       data-testid={`cy-${name}`}
       id={name}
       name={name}
       ref={ref}
-      variant={variant}
+      // variant={variant}
       {...rest}
     />
-    {!!message && <span>{message}</span>}
+    {!!message && <Message {...messageProps}>{message}</Message>}
   </Content>
 );
 

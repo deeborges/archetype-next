@@ -1,9 +1,9 @@
 import { Meta, Story } from '@storybook/react/types-6-0';
-import Input from '.';
+import { Input } from '.';
 
 export default {
   title: 'Input',
-  component: Input,
+  component: Input
 } as Meta;
 
-export const Initial: Story = (args) => <Input />;
+export const O: Story = () => <Input name="deyv" placeholder="Ola deyvison" />;
