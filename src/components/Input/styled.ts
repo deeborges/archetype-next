@@ -6,12 +6,22 @@ export type ContentProps = {
   width?: string;
 };
 
+export type InputLabelProps = {
+  marginBottom?: string;
+};
+
+export type MessageProps = {
+  bottom?: string;
+  marginTop?: string;
+};
+
 export const Content = styled.div<ContentProps>`
   ${({ marginBottom, width }) => css`
     margin-bottom: ${marginBottom ?? '4px'};
     width: ${width ?? '100%'};
   `}
   position: relative;
+  transition: 0.5s;
 `;
 
 export const Input = styled.input<InputProps>`
@@ -24,44 +34,39 @@ export const Input = styled.input<InputProps>`
   height: ${(props) => props.height ?? '48px'};
   margin-bottom: 4px;
   padding: 1rem;
-
-  width: ${(props) => props.width ?? '100%'}; */
-  ${({ width }) => css`
+*/
+  ${({ width, variant }) => css`
+    padding: 0.5rem;
     transition: 0.5s;
     width: ${width ?? '100%'};
+
+    &:focus {
+      border: 2px solid blue;
+    }
+
+    &:disabled {
+      background-color: #f5f5f5;
+      cursor: not-allowed;
+    }
+
+    &:active {
+      border: 1px solid #5ebd66;
+    }
   `}
-
-  &:disabled {
-    background-color: #f5f5f5;
-    cursor: not-allowed;
-  }
-
-  &:active {
-  }
 `;
 
-export type InputLabelProps = {
-  marginBottom?: string;
-};
 export const Label = styled.label<InputLabelProps>`
-  /* display: flex;
-  font-family: 'PublicSans-Normal', sans-serif;
-  font-size: 14px;
-  margin-bottom: 8px;
-  position: relative;
-  width: fit-content; */
+  /* font-family: ; */
+  /* font-size: 14px; */
   display: inline-block;
-  transition: 0.5s;
-  width: inherit;
+
   ${({ marginBottom }) => css`
     margin-bottom: ${marginBottom ?? '4px'};
+    transition: 0.5s;
+    width: inherit;
   `};
 `;
 
-export type MessageProps = {
-  bottom?: string;
-  marginTop?: string;
-};
 export const Message = styled.span<MessageProps>`
   ${({ bottom, marginTop }) => css`
     bottom: ${bottom ?? '-1rem'};

@@ -6,4 +6,34 @@ export default {
   component: Input
 } as Meta;
 
-export const O: Story = () => <Input name="deyv" placeholder="Ola deyvison" />;
+export const O: Story = () => {
+  return (
+    <>
+      <Input
+        name="deyv"
+        placeholder="Ola deyvison"
+        contentProps={{
+          marginBottom: '1rem',
+          width: '230px'
+        }}
+      />
+      <Input
+        name="deyv"
+        placeholder="Ola deyvison"
+        contentProps={{
+          marginBottom: '1rem',
+          width: '230px'
+        }}
+      />
+      <Input
+        name="deyv"
+        placeholder="Ola deyvison"
+        contentProps={{
+          marginBottom: '1rem',
+          width: '230px'
+        }}
+      />
+      <Input name="deyv" placeholder="Ola deyvison" disabled />
+    </>
+  );
+};

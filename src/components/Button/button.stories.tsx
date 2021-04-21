@@ -1,25 +1,21 @@
 import { Meta, Story } from '@storybook/react/types-6-0';
 import Button from '.';
+import { Stack } from '../Stack';
 
 export default {
   title: 'Colibri/Components/Button',
   component: Button
 } as Meta;
 
-export const Colors = () => (
-  <div
-    style={{
-      display: 'flex',
-      flexDirection: 'row'
-    }}
-  >
+export const Catalog = () => (
+  <Stack>
     <Button color="danger">danger</Button>
     <br />
     <Button color="default">default</Button>
     <br />
     <Button color="primary">primary</Button>
     <br />
-  </div>
+  </Stack>
 );
 
 export const Scales: Story = () => (

@@ -33,13 +33,13 @@ const modifiers = {
 const getBackgroundColor = ({ color }: Pick<ButtonProps, 'color'>) => {
   switch (color) {
     case 'default':
-      return '#25bb89';
+      return '#7f7f7f';
     case 'danger':
-      return '#e05b61';
+      return '#8d8d8d';
     case 'primary':
-      return '#095a93';
+      return '#434343';
     default:
-      return '#fff';
+      return '#7f7f7f';
   }
 };
 
@@ -48,9 +48,9 @@ const getColorText = ({ color }: Pick<ButtonProps, 'color'>) => {
     case 'default':
       return '#fff';
     case 'danger':
-      return '#8a1c26';
+      return '#fff';
     case 'primary':
-      return '#f4f8fa';
+      return '#7f7f7f';
     default:
       return '#fff';
   }
@@ -69,6 +69,8 @@ export const Content = styled.button<ContentProps>`
     color: ${!!color && getColorText};
     background-color: ${getBackgroundColor};
     padding: 1rem 1.5rem;
+
+    border-radius: 4px;
 
     ${!!size && modifiers[size]};
     ${!!fullWidth && modifiers.fullWidth};
