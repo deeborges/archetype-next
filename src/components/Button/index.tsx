@@ -1,14 +1,15 @@
 import { Content } from './styles';
 import { Spinner } from '../Spinner';
-
-export type sizes = 'x_small' | 'small' | 'medium' | 'large';
-export type variants = 'solid' | 'outlined' | 'link' | 'ghost';
-export type colors = 'default' | 'primary' | 'danger';
+import {
+  ColorsTypes,
+  SizesTypes,
+  VariantsTypes
+} from 'components/tokens-types';
 
 export type ButtonProps = {
-  size?: sizes;
-  variant?: variants;
-  color?: colors;
+  size?: SizesTypes;
+  variant?: VariantsTypes;
+  color?: ColorsTypes;
   children?: React.ReactNode;
   fullWidth?: boolean;
   leftIcon?: React.ReactNode;

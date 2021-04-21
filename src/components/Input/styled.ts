@@ -24,37 +24,87 @@ export const Content = styled.div<ContentProps>`
   transition: 0.5s;
 `;
 
+const modifiers = {
+  sizes: ({ sizes }: InputProps) => {
+    switch (sizes) {
+      case 'x_small':
+        return css`
+          height: 24px;
+        `;
+      case 'small':
+        return css`
+          height: 32px;
+        `;
+      case 'medium':
+        return css`
+          height: 40px;
+        `;
+      case 'large':
+        return css`
+          height: 48px;
+        `;
+      default:
+        null;
+    }
+  },
+  variants: ({ variant }: InputProps) => {
+    switch (variant) {
+      case 'filled':
+        return css`
+          background-color: #edf2f7;
+          border: 1px solid #edf2f7;
+
+          &:focus {
+            background: transparent;
+          }
+        `;
+      case 'flushed':
+        return css`
+          border: none;
+          border-bottom: 1px solid #646e7d;
+          border-radius: 0;
+          padding-left: 0;
+        `;
+      case 'outlined':
+        return css`
+          border: 1px solid #e2e2e2;
+
+          &:focus:invalid {
+            border: 1px solid #e62229;
+          }
+
+          &:focus:valid {
+            border: 1px solid #73dcb1;
+          }
+        `;
+      case 'unstyled':
+        return css`
+          background: transparent;
+          border: 0;
+          padding-left: 0;
+        `;
+      default:
+        null;
+    }
+  }
+};
+
 export const Input = styled.input<InputProps>`
-  ${({ width, variant }) => css`
-    ${() => {
-      switch (variant) {
-        case 'actived':
-          return css``;
-        default:
-          return css`
-            border: 1px solid #646e7d;
-            border-radius: 4px;
-            padding: 0.5rem;
-            height: 42px;
-          `;
-      }
-    }}
+  ${({ sizes, variant, width }) => css`
+    border-radius: 4px;
     outline: none;
+    padding: 0.7rem;
     transition: 0.25s;
     width: ${width ?? '100%'};
 
     &:disabled {
       background-color: #f5f5f5;
+      border: 1px solid #f5f5f5;
       cursor: not-allowed;
     }
 
-    &:focus:invalid {
-      border: 1px solid #fb0000;
-    }
-
-    &:focus:valid {
-      border: 1px solid #73dcb1;
-    }
+    ${!!sizes && modifiers.sizes};
+    ${!!variant && modifiers.variants};
   `}
 `;
 
@@ -64,7 +114,7 @@ export const Label = styled.label<InputLabelProps>`
   display: inline-block;
 
   ${({ marginBottom }) => css`
-    margin-bottom: ${marginBottom ?? '4px'};
+    margin-bottom: ${marginBottom ?? '8px'};
     transition: 0.5s;
     width: inherit;
   `};

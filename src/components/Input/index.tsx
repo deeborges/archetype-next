@@ -1,3 +1,4 @@
+import { SizesTypes } from 'components/tokens-types';
 import {
   forwardRef,
   InputHTMLAttributes,
@@ -17,8 +18,8 @@ export type InputProps = {
   name: string;
   label?: string;
   message?: string;
-  types?: 'filled' | 'outlined';
-  variant?: 'focused' | 'actived' | 'inactive' | 'hover' | 'error' | 'disabled';
+  variant?: 'outlined' | 'unstyled' | 'flushed' | 'filled';
+  sizes?: SizesTypes;
   contentProps?: ContentProps;
   labelProps?: InputLabelProps;
   messageProps?: MessageProps;
@@ -29,10 +30,11 @@ const InputBase: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
     name,
     label,
     message,
-    variant = 'inactive',
+    variant = 'outlined',
     contentProps,
     labelProps,
     messageProps,
+    sizes,
     ...rest
   },
   ref
@@ -49,6 +51,7 @@ const InputBase: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
       name={name}
       ref={ref}
       variant={variant}
+      sizes={sizes}
       {...rest}
     />
     {!!message && <Message {...messageProps}>{message}</Message>}
