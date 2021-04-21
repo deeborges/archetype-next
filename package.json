@@ -13,7 +13,9 @@
     "storybook": "start-storybook -s ./public -p 6006",
     "build-storybook": "build-storybook -s ./public",
     "generate": "yarn plop --plopfile ./generators/plopfile.js",
-    "serviceMock": "npx msw init ./public/ --save"
+    "serviceMock": "npx msw init ./public/ --save",
+    "cy:open": "./node_modules/.bin/cypress open",
+    "cy:run": "./node_modules/.bin/cypress run"
   },
   "dependencies": {
     "@chakra-ui/react": "^1.5.0",
