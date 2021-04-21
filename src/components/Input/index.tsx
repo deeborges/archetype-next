@@ -17,6 +17,7 @@ export type InputProps = {
   name: string;
   label?: string;
   message?: string;
+  types?: 'filled' | 'outlined';
   variant?: 'focused' | 'actived' | 'inactive' | 'hover' | 'error' | 'disabled';
   contentProps?: ContentProps;
   labelProps?: InputLabelProps;
@@ -47,7 +48,7 @@ const InputBase: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
       id={name}
       name={name}
       ref={ref}
-      // variant={variant}
+      variant={variant}
       {...rest}
     />
     {!!message && <Message {...messageProps}>{message}</Message>}

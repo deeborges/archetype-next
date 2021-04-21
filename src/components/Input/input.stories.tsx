@@ -10,30 +10,35 @@ export const O: Story = () => {
   return (
     <>
       <Input
-        name="deyv"
-        placeholder="Ola deyvison"
+        label="E-mail"
+        type="email"
+        name="email"
+        placeholder="E-mail"
         contentProps={{
-          marginBottom: '1rem',
-          width: '230px'
+          width: '320px'
         }}
       />
       <Input
-        name="deyv"
-        placeholder="Ola deyvison"
+        label="E-mail"
+        type="email"
+        name="email"
+        placeholder="E-mail"
         contentProps={{
-          marginBottom: '1rem',
-          width: '230px'
+          width: '320px'
         }}
+        disabled
       />
+
       <Input
-        name="deyv"
-        placeholder="Ola deyvison"
+        label="E-mail"
+        type="email"
+        name="email"
+        placeholder="E-mail"
         contentProps={{
-          marginBottom: '1rem',
-          width: '230px'
+          width: '320px'
         }}
+        message="Algo de errado nao está certo"
       />
-      <Input name="deyv" placeholder="Ola deyvison" disabled />
     </>
   );
 };

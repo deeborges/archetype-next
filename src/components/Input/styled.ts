@@ -25,39 +25,42 @@ export const Content = styled.div<ContentProps>`
 `;
 
 export const Input = styled.input<InputProps>`
-  /* border: ${(props) =>
-    `1px solid ${props.borderColor ? props.borderColor : '#dfe2e5'}`};
-  border-radius: ${(props) => props.borderRadius ?? '4px'};
-  color: #2d3338;
-  font-family: 'PublicSans-Normal', sans-serif;
-  font-size: ${(props) => props.fontSize ?? '14px'};
-  height: ${(props) => props.height ?? '48px'};
-  margin-bottom: 4px;
-  padding: 1rem;
-*/
   ${({ width, variant }) => css`
-    padding: 0.5rem;
-    transition: 0.5s;
+    ${() => {
+      switch (variant) {
+        case 'actived':
+          return css``;
+        default:
+          return css`
+            border: 1px solid #646e7d;
+            border-radius: 4px;
+            padding: 0.5rem;
+            height: 42px;
+          `;
+      }
+    }}
+    outline: none;
+    transition: 0.25s;
     width: ${width ?? '100%'};
-
-    &:focus {
-      border: 2px solid blue;
-    }
 
     &:disabled {
       background-color: #f5f5f5;
       cursor: not-allowed;
     }
 
-    &:active {
-      border: 1px solid #5ebd66;
+    &:focus:invalid {
+      border: 1px solid #fb0000;
+    }
+
+    &:focus:valid {
+      border: 1px solid #73dcb1;
     }
   `}
 `;
 
 export const Label = styled.label<InputLabelProps>`
-  /* font-family: ; */
-  /* font-size: 14px; */
+  color: #646e7d;
+  font-size: 12px;
   display: inline-block;
 
   ${({ marginBottom }) => css`

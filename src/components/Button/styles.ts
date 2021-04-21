@@ -33,7 +33,7 @@ const modifiers = {
 const getBackgroundColor = ({ color }: Pick<ButtonProps, 'color'>) => {
   switch (color) {
     case 'default':
-      return '#7f7f7f';
+      return '#0CD15B';
     case 'danger':
       return '#8d8d8d';
     case 'primary':
@@ -77,16 +77,7 @@ export const Content = styled.button<ContentProps>`
 
     &:disabled {
       cursor: not-allowed;
-      filter: brightness(0.7);
-
-      &:hover {
-        filter: brightness(0.7);
-      }
-    }
-
-    &:hover {
-      filter: brightness(0.8);
-      transition: 0.3s;
+      background-color: #aae7c2;
     }
   `}
 `;
