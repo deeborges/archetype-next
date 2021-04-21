@@ -27,57 +27,54 @@ const modifiers = {
   fullWidth: () => css`
     height: auto;
     width: 100%;
-  `
-};
+  `,
+  colors: {
+    primary: () => css`
+      color: #fff;
+      background-color: #0cd15b;
 
-const getBackgroundColor = ({ color }: Pick<ButtonProps, 'color'>) => {
-  switch (color) {
-    case 'default':
-      return '#0CD15B';
-    case 'danger':
-      return '#8d8d8d';
-    case 'primary':
-      return '#434343';
-    default:
-      return '#7f7f7f';
-  }
-};
+      &:hover {
+        background-color: #0bc555;
+      }
 
-const getColorText = ({ color }: Pick<ButtonProps, 'color'>) => {
-  switch (color) {
-    case 'default':
-      return '#fff';
-    case 'danger':
-      return '#fff';
-    case 'primary':
-      return '#7f7f7f';
-    default:
-      return '#fff';
+      &:focus {
+        background-color: #00b649;
+      }
+    `,
+    secondary: () => css`
+      color: #0cd15b;
+      background: transparent;
+      &:hover {
+        background-color: #f6fff9;
+      }
+
+      &:focus {
+        background-color: #e0ffe8;
+      }
+    `
   }
 };
 
 export const Content = styled.button<ContentProps>`
-  ${({ fullWidth, size, variant, color }) => css`
+  ${({ fullWidth, size, color }) => css`
     // TODO
-    grid-auto-flow: column;
     align-content: center;
     align-items: center;
-    display: grid;
-
     border: none;
+    border-radius: 4px;
+    display: grid;
     cursor: pointer;
-    color: ${!!color && getColorText};
-    background-color: ${getBackgroundColor};
+    grid-auto-flow: column;
     padding: 1rem 1.5rem;
 
-    border-radius: 4px;
-
+    ${!!color && modifiers.colors[color]}
     ${!!size && modifiers[size]};
     ${!!fullWidth && modifiers.fullWidth};
 
     &:disabled {
+      background-color: #c5efd6;
+      color: #fff;
       cursor: not-allowed;
-      background-color: #aae7c2;
     }
   `}
 `;

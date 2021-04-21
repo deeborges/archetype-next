@@ -2,7 +2,7 @@ import { Meta, Story } from '@storybook/react/types-6-0';
 import { Input } from '.';
 
 export default {
-  title: 'Components/Input',
+  title: 'Colibri/Components/Input',
   component: Input
 } as Meta;
 

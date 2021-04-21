@@ -2,6 +2,7 @@ import { Meta, Story } from '@storybook/react/types-6-0';
 import { ActivedLink } from '../ActiveLink';
 import Button from '.';
 import { Stack } from '../Stack';
+import { Clip } from 'components/Icon/svgs/Clip';
 
 export default {
   title: 'Colibri/Components/Button',
@@ -10,11 +11,9 @@ export default {
 
 export const Catalog = () => (
   <Stack>
-    <Button color="danger">danger</Button>
+    <Button color="secondary">Secondary</Button>
     <br />
-    <Button color="default">default</Button>
-    <br />
-    <Button color="primary">primary</Button>
+    <Button color="primary">Primary</Button>
     <br />
   </Stack>
 );
@@ -29,21 +28,13 @@ export const Scales: Story = () => (
           flexDirection: 'row'
         }}
       >
-        <Button color="default" size="x_small">
-          x small
-        </Button>
+        <Button size="x_small">x small</Button>
         &nbsp;&nbsp;
-        <Button color="default" size="small">
-          small
-        </Button>
+        <Button size="small">small</Button>
         &nbsp;&nbsp;
-        <Button color="default" size="medium">
-          medium
-        </Button>
+        <Button size="medium">medium</Button>
         &nbsp;&nbsp;
-        <Button color="default" size="large">
-          large
-        </Button>
+        <Button size="large">large</Button>
       </div>
       <br />
       <div
