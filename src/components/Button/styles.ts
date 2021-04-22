@@ -20,7 +20,8 @@ const modifiers = {
     `,
     secondary: () => css`
       color: #0cd15b;
-      background: #ffffff;
+      background: transparent;
+
       &:hover {
         background-color: #f6fff9;
       }

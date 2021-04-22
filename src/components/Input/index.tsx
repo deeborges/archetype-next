@@ -52,7 +52,7 @@ const InputBase: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
       name={name}
       ref={ref}
       variant={variant}
-      placeholder={`${placeholder}${isRequired ? ' *' : ''}`}
+      placeholder={`${placeholder ?? ''}${isRequired ? ' *' : ''}`}
       required={isRequired}
       {...rest}
     />

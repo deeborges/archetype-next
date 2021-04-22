@@ -46,14 +46,6 @@ const modifiers = {
       case 'outlined':
         return css`
           border: 1px solid #e2e2e2;
-
-          &:focus:invalid {
-            border: 1px solid #e62229;
-          }
-
-          &:focus:valid {
-            border: 1px solid #73dcb1;
-          }
         `;
       case 'unstyled':
         return css`
@@ -69,16 +61,23 @@ const modifiers = {
 
 export const Input = styled.input<InputProps>`
   ${({ variant, width }) => css`
-    border-radius: 4px;
+    border-radius: 8px;
     outline: none;
     padding: 0.7rem;
     transition: 0.25s;
     width: ${width ?? '328px'};
 
     &:disabled {
-      background-color: #f5f5f5;
-      border: 1px solid #f5f5f5;
+      border: 1px solid rgba(0, 0, 0, 0.2);
       cursor: not-allowed;
+    }
+
+    &:invalid {
+      border: 1px solid #e62229;
+    }
+
+    &:focus:valid {
+      border: 1px solid #73dcb1;
     }
 
     ${!!variant && modifiers.variants};
