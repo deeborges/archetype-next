@@ -62,12 +62,13 @@ const modifiers = {
 
 export const styledText = ({
   tag = 'p',
-  type = 'body-1',
+  type,
+  weight = '300',
   fontSize = 'default'
 }: TextProps) => styled(tag)`
   ${({ theme }: modifiersProps) => css`
     ${!type && `font-size: ${theme.font.size[fontSize]}`};
-    ${!type && `font-weight: ${theme.font.weight[400]}`};
+    ${!type && `font-weight: ${theme.font.weight[weight]}`};
     ${type && modifiers.type[type]};
   `}
 `;
