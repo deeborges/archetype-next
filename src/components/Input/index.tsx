@@ -17,7 +17,6 @@ export type InputProps = {
   name: string;
   label?: string;
   message?: string;
-  variant?: 'outlined' | 'unstyled' | 'flushed' | 'filled';
   contentProps?: ContentProps;
   labelProps?: InputLabelProps;
   messageProps?: MessageProps;
@@ -30,7 +29,6 @@ const InputBase: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
     name,
     label,
     message,
-    variant = 'outlined',
     contentProps,
     labelProps,
     messageProps,
@@ -51,7 +49,6 @@ const InputBase: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
       id={name}
       name={name}
       ref={ref}
-      variant={variant}
       placeholder={`${placeholder ?? ''}${isRequired ? ' *' : ''}`}
       required={isRequired}
       {...rest}

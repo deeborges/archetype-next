@@ -24,43 +24,9 @@ export const Content = styled.div<ContentProps>`
   transition: 0.5s;
 `;
 
-const modifiers = {
-  variants: ({ variant }: InputProps) => {
-    switch (variant) {
-      case 'filled':
-        return css`
-          background-color: #edf2f7;
-          border: 1px solid #edf2f7;
-
-          &:focus {
-            background: transparent;
-          }
-        `;
-      case 'flushed':
-        return css`
-          border: none;
-          border-bottom: 1px solid #646e7d;
-          border-radius: 0;
-          padding-left: 0;
-        `;
-      case 'outlined':
-        return css`
-          border: 1px solid #e2e2e2;
-        `;
-      case 'unstyled':
-        return css`
-          background: transparent;
-          border: 0;
-          padding-left: 0;
-        `;
-      default:
-        null;
-    }
-  }
-};
-
 export const Input = styled.input<InputProps>`
-  ${({ variant, width }) => css`
+  ${({ width }) => css`
+    border: 1px solid #e2e2e2;
     border-radius: 8px;
     outline: none;
     padding: 0.7rem;
@@ -79,8 +45,6 @@ export const Input = styled.input<InputProps>`
     &:focus:valid {
       border: 1px solid #73dcb1;
     }
-
-    ${!!variant && modifiers.variants};
   `}
 `;
 

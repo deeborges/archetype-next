@@ -31,7 +31,17 @@ export type TextProps = {
     | 'del'
     | 'small'
     | 'mark';
-  type?: 'subtitle' | 'label' | 'body-1' | 'body-2' | 'caption';
+  type?:
+    | 'headline'
+    | 'title'
+    | 'subheading-1'
+    | 'subheading-2'
+    | 'body-1'
+    | 'body-2'
+    | 'body-3'
+    | 'caption-1'
+    | 'caption-2'
+    | 'caption-3';
   weight?:
     | '100'
     | '200'

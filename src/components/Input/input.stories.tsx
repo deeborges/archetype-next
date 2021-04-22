@@ -6,24 +6,12 @@ export default {
   component: Input
 } as Meta;
 
-export const Variants: Story = () => {
-  return (
-    <>
-      <Input name="filled" placeholder="filled" variant="filled" />
-      <Input name="outlined" placeholder="outlined" variant="outlined" />
-      <Input name="flushed" placeholder="flushed" variant="flushed" />
-      <Input name="unstyled" placeholder="unstyled" variant="unstyled" />
-    </>
-  );
-};
-
 export const ErrorNoValue = () => (
   <Input
     isRequired
     name="Error"
     placeholder="Label"
     autoFocus
-    variant="outlined"
     contentProps={{
       marginBottom: '1rem'
     }}
@@ -38,7 +26,6 @@ export const ErrorWithValue = () => (
     type="email"
     placeholder="Label"
     autoFocus
-    variant="outlined"
     contentProps={{
       marginBottom: '1rem'
     }}
