@@ -2,32 +2,9 @@ import styled, { css } from 'styled-components';
 import { ButtonProps } from '.';
 
 // eslint-disable-next-line @typescript-eslint/ban-types
-type ContentProps = {} & Pick<
-  ButtonProps,
-  'fullWidth' | 'color' | 'size' | 'variant'
->;
+type ContentProps = {} & Pick<ButtonProps, 'color' | 'height' | 'width'>;
 
 const modifiers = {
-  x_small: () => css`
-    height: 2rem;
-    width: 12rem;
-  `,
-  small: () => css`
-    height: 3rem;
-    width: 12rem;
-  `,
-  medium: () => css`
-    height: 4rem;
-    width: 12rem;
-  `,
-  large: () => css`
-    height: 5rem;
-    width: 12rem;
-  `,
-  fullWidth: () => css`
-    height: auto;
-    width: 100%;
-  `,
   colors: {
     primary: () => css`
       color: #fff;
@@ -43,7 +20,7 @@ const modifiers = {
     `,
     secondary: () => css`
       color: #0cd15b;
-      background: transparent;
+      background: #ffffff;
       &:hover {
         background-color: #f6fff9;
       }
@@ -56,20 +33,26 @@ const modifiers = {
 };
 
 export const Content = styled.button<ContentProps>`
-  ${({ fullWidth, size, color }) => css`
+  ${({ color, height, width }) => css`
     // TODO
-    align-content: center;
+    justify-content: center;
     align-items: center;
     border: none;
     border-radius: 4px;
-    display: grid;
+    display: flex;
     cursor: pointer;
     grid-auto-flow: column;
     padding: 1rem 1.5rem;
+    width: ${width ?? '320px'};
+    height: ${height ?? '52px'};
+    transition: 0.25s;
+    max-width: 328px;
+
+    @media screen and (max-width: 320px) {
+      width: 232px;
+    }
 
     ${!!color && modifiers.colors[color]}
-    ${!!size && modifiers[size]};
-    ${!!fullWidth && modifiers.fullWidth};
 
     &:disabled {
       background-color: #c5efd6;

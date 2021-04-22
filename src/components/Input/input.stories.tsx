@@ -6,50 +6,6 @@ export default {
   component: Input
 } as Meta;
 
-export const Sizes: Story = () => {
-  return (
-    <>
-      <Input
-        label="X_Small"
-        name="x_small"
-        placeholder="X_Small"
-        sizes="x_small"
-        contentProps={{
-          marginBottom: '1rem'
-        }}
-      />
-
-      <Input
-        label="Small"
-        name="small"
-        placeholder="Small"
-        sizes="small"
-        contentProps={{
-          marginBottom: '1rem'
-        }}
-      />
-      <Input
-        label="Medium"
-        name="medium"
-        placeholder="Medium"
-        sizes="medium"
-        contentProps={{
-          marginBottom: '1rem'
-        }}
-      />
-      <Input
-        label="Large"
-        name="large"
-        placeholder="Large"
-        sizes="large"
-        contentProps={{
-          marginBottom: '1rem'
-        }}
-      />
-    </>
-  );
-};
-
 export const Variants: Story = () => {
   return (
     <>
@@ -61,50 +17,28 @@ export const Variants: Story = () => {
   );
 };
 
-export const FilledWithSize = () => {
-  return (
-    <>
-      <Input
-        label="X_Small"
-        name="x_small"
-        placeholder="X_Small"
-        sizes="x_small"
-        variant="filled"
-        contentProps={{
-          marginBottom: '1rem'
-        }}
-      />
+export const isRequired = () => (
+  <Input
+    isRequired
+    name="large"
+    placeholder="Large"
+    variant="outlined"
+    contentProps={{
+      marginBottom: '1rem'
+    }}
+  />
+);
 
-      <Input
-        label="Small"
-        name="small"
-        placeholder="Small"
-        sizes="small"
-        variant="filled"
-        contentProps={{
-          marginBottom: '1rem'
-        }}
-      />
-      <Input
-        label="Medium"
-        name="medium"
-        placeholder="Medium"
-        sizes="medium"
-        variant="filled"
-        contentProps={{
-          marginBottom: '1rem'
-        }}
-      />
-      <Input
-        label="Large"
-        name="large"
-        placeholder="Large"
-        sizes="large"
-        variant="filled"
-        contentProps={{
-          marginBottom: '1rem'
-        }}
-      />
-    </>
-  );
-};
+export const withError = () => (
+  <Input
+    isRequired
+    name="Error"
+    type="email"
+    value="Error"
+    placeholder="Large"
+    variant="outlined"
+    contentProps={{
+      marginBottom: '1rem'
+    }}
+  />
+);

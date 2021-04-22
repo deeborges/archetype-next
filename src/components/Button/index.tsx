@@ -1,40 +1,36 @@
 import { Content } from './styles';
 import { Spinner } from '../Spinner';
-import {
-  ColorsTypes,
-  SizesTypes,
-  VariantsTypes
-} from 'components/tokens-types';
+import { ColorsTypes } from 'components/tokens-types';
 
 export type ButtonProps = {
-  size?: SizesTypes;
-  variant?: VariantsTypes;
   color?: ColorsTypes;
   children?: React.ReactNode;
-  fullWidth?: boolean;
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
   loading?: boolean;
-  onClick?: () => (event: React.MouseEvent<HTMLButtonElement>) => void;
+  disabled?: boolean;
+  height?: string;
+  width?: string;
+  onClick?: () => void;
+  // onClick?: () => (event: React.MouseEvent<HTMLButtonElement>) => void;
 };
 
 const Button = ({
-  size = 'medium',
-  variant = 'solid',
   color = 'primary',
-  fullWidth = false,
+  children,
   leftIcon,
   rightIcon,
-  children,
   loading = false,
+  disabled = false,
+  height,
+  width,
   ...props
 }: ButtonProps) => (
   <Content
     color={color}
-    fullWidth={fullWidth}
-    size={size}
-    variant={variant}
-    disabled={loading}
+    disabled={loading || disabled}
+    height={height}
+    width={width}
     {...props}
   >
     {!!loading && <Spinner />}

@@ -25,28 +25,6 @@ export const Content = styled.div<ContentProps>`
 `;
 
 const modifiers = {
-  sizes: ({ sizes }: InputProps) => {
-    switch (sizes) {
-      case 'x_small':
-        return css`
-          height: 24px;
-        `;
-      case 'small':
-        return css`
-          height: 32px;
-        `;
-      case 'medium':
-        return css`
-          height: 40px;
-        `;
-      case 'large':
-        return css`
-          height: 48px;
-        `;
-      default:
-        null;
-    }
-  },
   variants: ({ variant }: InputProps) => {
     switch (variant) {
       case 'filled':
@@ -90,12 +68,12 @@ const modifiers = {
 };
 
 export const Input = styled.input<InputProps>`
-  ${({ sizes, variant, width }) => css`
+  ${({ variant, width }) => css`
     border-radius: 4px;
     outline: none;
     padding: 0.7rem;
     transition: 0.25s;
-    width: ${width ?? '100%'};
+    width: ${width ?? '328px'};
 
     &:disabled {
       background-color: #f5f5f5;
@@ -103,7 +81,6 @@ export const Input = styled.input<InputProps>`
       cursor: not-allowed;
     }
 
-    ${!!sizes && modifiers.sizes};
     ${!!variant && modifiers.variants};
   `}
 `;
