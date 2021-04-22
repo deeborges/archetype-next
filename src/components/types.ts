@@ -24,3 +24,16 @@ export type FontWeights =
   | '800'
   | '900';
 export type Tags = 'label' | 'p' | 'span';
+
+export type Colors =
+  | 'noverde'
+  | 'acqua'
+  | 'galaxy'
+  | 'text'
+  | 'white'
+  | 'gray100'
+  | 'gray300'
+  | 'gray500'
+  | 'gray700'
+  | 'orange500'
+  | 'red500';
