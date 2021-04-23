@@ -1,6 +1,11 @@
 import { Content } from './styles';
 import { Spinner } from '../Spinner';
 import { ColorsTypes } from 'components/tokens-types';
+import { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react';
+
+type ButtonTypes =
+  | AnchorHTMLAttributes<HTMLAnchorElement>
+  | ButtonHTMLAttributes<HTMLButtonElement>;
 
 export type ButtonProps = {
   color?: ColorsTypes;

@@ -18,25 +18,19 @@
     "cy:run": "./node_modules/.bin/cypress run"
   },
   "dependencies": {
-    "@chakra-ui/react": "^1.5.0",
-    "@emotion/react": "^11",
-    "@emotion/styled": "^11",
     "cypress": "^7.1.0",
-    "framer-motion": "^4",
     "next": "10.0.6",
-    "next-pwa": "^5.0.5",
     "react": "17.0.1",
     "react-dom": "17.0.1",
-    "react-icons": "^4.2.0",
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.13",
     "@babel/preset-typescript": "^7.12.13",
-    "@storybook/addon-essentials": "^6.2.8",
-    "@storybook/addons": "^6.2.8",
-    "@storybook/react": "^6.2.8",
-    "@storybook/theming": "^6.2.8",
+    "@storybook/addon-essentials": "^6.2.9",
+    "@storybook/addons": "^6.2.9",
+    "@storybook/react": "^6.2.9",
+    "@storybook/theming": "^6.2.9",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@types/jest": "^26.0.20",
@@ -54,7 +48,6 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "jest": "^26.6.3",
     "jest-styled-components": "^7.0.3",
-    "msw": "^0.28.1",
     "plop": "^2.7.4",
     "prettier": "^2.2.1",
     "typescript": "^4.1.3"

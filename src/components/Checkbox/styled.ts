@@ -40,9 +40,14 @@ export const Input = styled.input`
       width: 0.3rem;
     }
 
+    &:focus {
+      box-shadow: 0 0 0.2rem ${theme.colors.allColors.gray700};
+    }
+
     &:checked {
       background: ${theme.colors.primary.noverde};
       border-color: ${theme.colors.primary.noverde};
+      box-shadow: none;
 
       &:before {
         opacity: 1;

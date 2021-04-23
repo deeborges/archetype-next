@@ -1,8 +1,9 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+
 import styled, { css } from 'styled-components';
 import { ButtonProps } from '.';
 
-// eslint-disable-next-line @typescript-eslint/ban-types
-type ContentProps = {} & Pick<ButtonProps, 'color' | 'height' | 'width'>;
+type ContentProps = Pick<ButtonProps, 'color' | 'height' | 'width'>;
 
 const modifiers = {
   colors: {
@@ -53,7 +54,7 @@ export const Content = styled.button<ContentProps>`
       width: 232px;
     }
 
-    ${!!color && modifiers.colors[color]}
+    ${!!color && modifiers.colors[color!]}
 
     &:disabled {
       background-color: #c5efd6;
