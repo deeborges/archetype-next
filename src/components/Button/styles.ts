@@ -3,7 +3,10 @@
 import styled, { css } from 'styled-components';
 import { ButtonProps } from '.';
 
-type ContentProps = Pick<ButtonProps, 'color' | 'height' | 'width'>;
+type ContentProps = Pick<
+  ButtonProps,
+  'color' | 'height' | 'width' | 'marginBottom'
+>;
 
 const modifiers = {
   colors: {
@@ -35,7 +38,7 @@ const modifiers = {
 };
 
 export const Content = styled.button<ContentProps>`
-  ${({ color, height, width }) => css`
+  ${({ color, height, width, marginBottom }) => css`
     // TODO
     justify-content: center;
     align-items: center;
@@ -54,7 +57,8 @@ export const Content = styled.button<ContentProps>`
       width: 232px;
     }
 
-    ${!!color && modifiers.colors[color!]}
+    ${!!color && modifiers.colors[color!]};
+    ${!!marginBottom && `margin-bottom: ${marginBottom}`};
 
     &:disabled {
       background-color: #c5efd6;

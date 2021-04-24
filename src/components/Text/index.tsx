@@ -1,3 +1,4 @@
+import { Colors } from 'components/types';
 import { styledText } from './styled';
 
 export type TextProps = {
@@ -52,6 +53,8 @@ export type TextProps = {
     | '700'
     | '800'
     | '900';
+  marginBotton?: string;
+  color?: Colors;
 };
 
 export const Text = (props: TextProps) => {

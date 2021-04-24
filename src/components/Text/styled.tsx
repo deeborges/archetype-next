@@ -3,7 +3,10 @@ import { TextProps } from '.';
 
 type modifiersProps = {
   theme: DefaultTheme;
-} & Pick<TextProps, 'tag' | 'weight' | 'fontSize' | 'type'>;
+} & Pick<
+  TextProps,
+  'tag' | 'weight' | 'fontSize' | 'type' | 'marginBotton' | 'color'
+>;
 
 const modifiers = {
   type: {
@@ -64,11 +67,15 @@ export const styledText = ({
   tag = 'p',
   type,
   weight = '300',
-  fontSize = 'default'
+  fontSize = 'default',
+  marginBotton,
+  color
 }: TextProps) => styled(tag)`
   ${({ theme }: modifiersProps) => css`
     ${!type && `font-size: ${theme.font.size[fontSize]}`};
     ${!type && `font-weight: ${theme.font.weight[weight]}`};
     ${type && modifiers.type[type]};
+    ${!!marginBotton && `margin-bottom: ${marginBotton}`};
+    ${!!color && `color: ${theme.colors.allColors[color]}`}
   `}
 `;

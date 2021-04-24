@@ -16,6 +16,7 @@ export type ButtonProps = {
   disabled?: boolean;
   height?: string;
   width?: string;
+  marginBottom?: string;
   onClick?: () => void;
   // onClick?: () => (event: React.MouseEvent<HTMLButtonElement>) => void;
 };
@@ -29,6 +30,7 @@ const Button = ({
   disabled = false,
   height,
   width,
+  marginBottom,
   ...props
 }: ButtonProps) => (
   <Content
@@ -36,6 +38,7 @@ const Button = ({
     disabled={loading || disabled}
     height={height}
     width={width}
+    marginBottom={marginBottom}
     {...props}
   >
     {!!loading && <Spinner />}

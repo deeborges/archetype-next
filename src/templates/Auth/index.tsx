@@ -12,7 +12,6 @@ type AuthProps = {
   children: React.ReactNode;
 };
 
-// TODO - falta colocar as cores do design system e margens personalizadas no Text
 const Auth = ({ children }: AuthProps) => (
   <Wrapper>
     <Container>
@@ -32,35 +31,18 @@ const Auth = ({ children }: AuthProps) => (
 
       <ContentFormWrapper>
         <ContentForm>
-          <Text fontSize="xl_2" css={{ color: '#0C0F25' }}>
+          <Text fontSize="xl_2" color="galaxy">
             muito&nbsp;
-            <Text
-              fontSize="xl_2"
-              tag="strong"
-              weight="600"
-              css={{ color: '#0C0F25' }}
-            >
+            <Text fontSize="xl_2" tag="strong" weight="600" color="galaxy">
               prazer :)
             </Text>
           </Text>
-          <Text
-            type="body-1"
-            css={{
-              color: '#838383'
-            }}
-          >
+          <Text type="body-1" color="gray500">
             para fazer sua simulação precisamos criar a sua conta.
           </Text>
-          <Text
-            type="body-1"
-            css={{
-              color: '#838383'
-            }}
-          >
+          <Text type="body-1" color="gray500" marginBotton="2rem">
             É rapidinho!
           </Text>
-          <br />
-          <br />
           {children}
         </ContentForm>
       </ContentFormWrapper>

@@ -41,7 +41,9 @@ export default function SignIn() {
           marginBottom: '1rem'
         }}
       />
-      <Button disabled>próximo</Button>
+      <Button disabled marginBottom="8px">
+        próximo
+      </Button>
       <Button color="secondary">voltar para login</Button>
     </Auth>
   );
