@@ -55,9 +55,14 @@ export type TextProps = {
     | '900';
   marginBotton?: string;
   color?: Colors;
+  className?: string;
 };
 
 export const Text = (props: TextProps) => {
   const TmpText = styledText({ ...props });
-  return <TmpText {...props}>{props.children}</TmpText>;
+  return (
+    <TmpText className={props.className} {...props}>
+      {props.children}
+    </TmpText>
+  );
 };
