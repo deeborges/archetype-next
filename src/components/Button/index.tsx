@@ -17,8 +17,7 @@ export type ButtonProps = {
   height?: string;
   width?: string;
   marginBottom?: string;
-  onClick?: () => void;
-  // onClick?: () => (event: React.MouseEvent<HTMLButtonElement>) => void;
+  onClick?: () => (event: React.MouseEvent<HTMLButtonElement>) => void;
 };
 
 const Button = ({
