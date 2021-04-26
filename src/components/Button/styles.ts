@@ -3,7 +3,7 @@
 import styled, { css } from 'styled-components';
 import { ButtonProps } from '.';
 
-type ContentProps = Pick<
+export type ContentProps = Pick<
   ButtonProps,
   'color' | 'height' | 'width' | 'marginBottom'
 >;
@@ -17,7 +17,6 @@ const modifiers = {
       &:hover {
         background-color: #0bc555;
       }
-
       &:focus {
         background-color: #00b649;
       }
@@ -29,7 +28,6 @@ const modifiers = {
       &:hover {
         background-color: #f6fff9;
       }
-
       &:focus {
         background-color: #e0ffe8;
       }
@@ -39,7 +37,6 @@ const modifiers = {
 
 export const Content = styled.button<ContentProps>`
   ${({ color, height, width, marginBottom }) => css`
-    // TODO
     justify-content: center;
     align-items: center;
     border: none;
@@ -50,6 +47,7 @@ export const Content = styled.button<ContentProps>`
     padding: 1rem 1.5rem;
     width: ${width ?? '320px'};
     height: ${height ?? '52px'};
+    text-decoration: none;
     transition: 0.25s;
     max-width: 328px;
 

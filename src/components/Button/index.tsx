@@ -1,7 +1,7 @@
-import { Content } from './styles';
+import { forwardRef, AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react';
+import { Content, ContentProps } from './styles';
 import { Spinner } from '../Spinner';
-import { ColorsTypes } from 'core/tokens-types';
-import { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react';
+import { ColorsTypes } from '../tokens-types';
 
 type ButtonTypes =
   | AnchorHTMLAttributes<HTMLAnchorElement>
@@ -9,48 +9,47 @@ type ButtonTypes =
 
 export type ButtonProps = {
   color?: ColorsTypes;
-  children?: React.ReactNode;
-  leftIcon?: React.ReactNode;
-  rightIcon?: React.ReactNode;
+  leftIcon?: JSX.Element;
+  rightIcon?: JSX.Element;
   loading?: boolean;
   disabled?: boolean;
   height?: string;
   width?: string;
   marginBottom?: string;
-  type?: 'button' | 'submit';
   as?: React.ElementType;
-  onClick?: () => (event: React.MouseEvent<HTMLButtonElement>) => void;
-};
+} & ButtonTypes;
 
-const Button = ({
-  color = 'primary',
-  children,
-  leftIcon,
-  rightIcon,
-  loading = false,
-  disabled = false,
-  height,
-  width,
-  marginBottom,
-  type,
-  as,
-  ...props
-}: ButtonProps) => (
+const Button: React.ForwardRefRenderFunction<ContentProps, ButtonProps> = (
+  {
+    as,
+    children,
+    color = 'primary',
+    disabled = false,
+    height,
+    leftIcon,
+    loading = false,
+    marginBottom,
+    rightIcon,
+    width,
+    ...props
+  },
+  ref
+) => (
   <Content
+    as={as}
     color={color}
     disabled={loading || disabled}
     height={height}
-    width={width}
     marginBottom={marginBottom}
-    type={type}
-    as={as}
+    ref={ref}
+    width={width}
     {...props}
   >
-    {!!loading && <Spinner />}
     {!!leftIcon && leftIcon}
+    {!!loading && <Spinner />}
     {!!children && <span>{children}</span>}
     {!!rightIcon && rightIcon}
   </Content>
 );
 
-export default Button;
+export default forwardRef(Button);
