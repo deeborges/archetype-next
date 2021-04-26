@@ -36,7 +36,7 @@ const Auth = ({ children }: AuthProps) => (
         <ContentForm>
           <Text fontSize="xl_2" color="galaxy">
             muito&nbsp;
-            <Text fontSize="xl_2" tag="strong" weight="600" color="galaxy">
+            <Text tag="span" fontSize="xl_2" weight="600" color="galaxy">
               prazer :)
             </Text>
           </Text>

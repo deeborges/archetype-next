@@ -1,6 +1,6 @@
 import { Content } from './styles';
 import { Spinner } from '../Spinner';
-import { ColorsTypes } from 'components/tokens-types';
+import { ColorsTypes } from 'core/tokens-types';
 import { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react';
 
 type ButtonTypes =
@@ -17,6 +17,8 @@ export type ButtonProps = {
   height?: string;
   width?: string;
   marginBottom?: string;
+  type?: 'button' | 'submit';
+  as?: React.ElementType;
   onClick?: () => (event: React.MouseEvent<HTMLButtonElement>) => void;
 };
 
@@ -30,6 +32,8 @@ const Button = ({
   height,
   width,
   marginBottom,
+  type,
+  as,
   ...props
 }: ButtonProps) => (
   <Content
@@ -38,6 +42,8 @@ const Button = ({
     height={height}
     width={width}
     marginBottom={marginBottom}
+    type={type}
+    as={as}
     {...props}
   >
     {!!loading && <Spinner />}
