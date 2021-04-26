@@ -90,8 +90,9 @@ const modifiers = {
 };
 
 export const Input = styled.input<InputProps>`
-  ${({ sizes, variant, width }) => css`
-    border-radius: 4px;
+  ${({ theme, width }) => css`
+    border: 1px solid #e2e2e2;
+    border-radius: 8px;
     outline: none;
     padding: 0.7rem;
     transition: 0.25s;
@@ -103,8 +104,17 @@ export const Input = styled.input<InputProps>`
       cursor: not-allowed;
     }
 
-    ${!!sizes && modifiers.sizes};
-    ${!!variant && modifiers.variants};
+    &:focus:invalid {
+      border: 1px solid #e62229;
+    }
+
+    &:focus:valid {
+      border: 1px solid #73dcb1;
+    }
+
+    &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 ${theme.font.size.large} #e0ffe8 inset;
+    }
   `}
 `;
 

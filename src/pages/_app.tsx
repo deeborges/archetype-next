@@ -1,3 +1,4 @@
+import NextNprogress from 'nextjs-progressbar';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 
@@ -21,10 +22,15 @@ function App({ Component, pageProps }: AppProps) {
           />
         </Head>
         <LayoutGlobal />
+        <NextNprogress
+          color={Theme.default.colors.allColors.noverde}
+          startPosition={0.3}
+          stopDelayMs={200}
+          height={3}
+        />
         <Component {...pageProps} />
       </ThemeProvider>
     </>
   );
 }
-
 export default App;
