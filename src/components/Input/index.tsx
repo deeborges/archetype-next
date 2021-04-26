@@ -50,7 +50,7 @@ const InputBase: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
       name={name}
       ref={ref}
       placeholder={`${placeholder ?? ''}${isRequired ? ' *' : ''}`}
-      required={isRequired}
+      message={message}
       {...rest}
     />
     {!!message && <Message {...messageProps}>{message}</Message>}

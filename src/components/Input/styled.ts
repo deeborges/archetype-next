@@ -25,7 +25,7 @@ export const Content = styled.div<ContentProps>`
 `;
 
 export const Input = styled.input<InputProps>`
-  ${({ width }) => css`
+  ${({ width, message }) => css`
     border: 1px solid #e2e2e2;
     border-radius: 8px;
     outline: none;
@@ -38,7 +38,16 @@ export const Input = styled.input<InputProps>`
       cursor: not-allowed;
     }
 
-    &:invalid {
+    ${!!message &&
+    css`
+      border: 1px solid #e62229;
+
+      &:focus:valid {
+        border: 1px solid #e62229 !important;
+      }
+    `};
+
+    &:focus:invalid {
       border: 1px solid #e62229;
     }
 
@@ -62,12 +71,12 @@ export const Label = styled.label<InputLabelProps>`
 
 export const Message = styled.span<MessageProps>`
   ${({ bottom, marginTop }) => css`
-    bottom: ${bottom ?? '-1rem'};
+    bottom: 0;
     color: #e62229;
-    font-family: 'PublicSans-Regular';
-    font-size: 14px;
+    font-size: 12px;
     left: 0;
-    margin-top: ${marginTop ?? '0.25rem'};
+    margin-bottom: -20px;
+    margin-top: 11.25rem;
     position: absolute;
   `}
 `;

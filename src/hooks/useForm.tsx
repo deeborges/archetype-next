@@ -1,35 +1,95 @@
-import { useState, useEffect, FormEvent } from 'react';
+/* eslint-disable @typescript-eslint/ban-types */
+import { ChangeEvent, FormEvent, useState } from 'react';
 
-const useForm = ({ callback, validate }: any) => {
-  const [values, setValues] = useState({});
-  const [errors, setErrors] = useState({});
+interface Validation {
+  required?: {
+    value: boolean;
+    message: string;
+  };
+  pattern?: {
+    value: string;
+    message: string;
+  };
+  custom?: {
+    isValid: (value: string) => boolean;
+    message: string;
+  };
+}
+
+type ErrorRecord<T> = Record<keyof T, string>;
+type Validations<T extends {}> = Partial<Record<keyof T, Validation>>;
+
+const useForm = <T extends Record<keyof T, any> = {}>(options?: {
+  validations?: Validations<T>;
+  initialValues?: Partial<T>;
+  onSubmit?: () => void;
+}) => {
+  const [data, setData] = useState<T>((options?.initialValues || {}) as T);
+  const [errors, setErrors] = useState<ErrorRecord<T>>({} as ErrorRecord<T>);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  useEffect(() => {
-    if (Object.keys(errors).length === 0 && isSubmitting) {
-      callback();
-    }
-  }, [callback, errors, isSubmitting]);
+  // Needs to extend unknown so we can add a generic to an arrow function
+  const handleChange = <S extends unknown>(
+    key: keyof T,
+    sanitizeFn?: (value: string) => S
+  ) => (e: ChangeEvent<HTMLInputElement & HTMLSelectElement>) => {
+    const value = sanitizeFn ? sanitizeFn(e.target.value) : e.target.value;
+    e.persist();
 
-  const handleSubmit = (event: FormEvent) => {
-    if (event) event.preventDefault();
-    !!validate && setErrors(validate(values));
-    setIsSubmitting(true);
+    console.log(key, value);
+    setData({
+      ...data,
+      [key]: value
+    });
   };
 
-  const handleChange = (event: FormEvent) => {
-    event.persist();
-    setValues((values) => ({
-      ...values,
-      [event.target.name]: event.target.value
-    }));
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    // verifica se eu passei validacoes
+    const validations = options?.validations;
+    if (validations) {
+      let valid = true;
+
+      // o erros recebem as propriedades que eu passei
+      const newErrors = {} as ErrorRecord<T>;
+      for (const key in validations) {
+        const value = data[key];
+        const validation = validations[key];
+        if (validation?.required?.value && !value) {
+          valid = false;
+          newErrors[key] = validation?.required?.message;
+        }
+        const pattern = validation?.pattern;
+        if (pattern?.value && !RegExp(pattern.value).test(value)) {
+          valid = false;
+          newErrors[key] = pattern.message;
+        }
+        const custom = validation?.custom;
+        if (custom?.isValid && !custom.isValid(value)) {
+          valid = false;
+          newErrors[key] = custom.message;
+        }
+      }
+      if (!valid) {
+        setErrors(newErrors);
+        return;
+      }
+    }
+    setErrors({} as ErrorRecord<T>);
+    if (options?.onSubmit) {
+      options.onSubmit();
+    }
   };
 
   return {
     handleChange,
     handleSubmit,
-    values,
-    errors
+    setIsSubmitting,
+    setErrors,
+    data,
+    errors,
+    isSubmitting
   };
 };
 
