@@ -1,6 +1,6 @@
 import { Input } from '../Input';
 import Button from '../Button';
-import useForm from 'hooks/useForm';
+import useForm from '../../hooks/useForm';
 
 type FormSignInValues = {
   nomeCompleto: string;

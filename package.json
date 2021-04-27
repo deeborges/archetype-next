@@ -18,12 +18,14 @@
     "cy:run": "./node_modules/.bin/cypress run"
   },
   "dependencies": {
+    "@svgr/cli": "^5.5.0",
     "babel-plugin-module-resolver": "^4.1.0",
     "cypress": "^7.1.0",
     "env-cmd": "^10.1.0",
     "next": "10.0.6",
     "react": "17.0.1",
     "react-dom": "17.0.1",
+    "react-icons": "^4.2.0",
     "styled-components": "^5.2.1",
     "styled-media-query": "^2.1.2"
   },
