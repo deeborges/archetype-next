@@ -1,11 +1,11 @@
-import { Colors } from 'components/types';
+import { TokenColors } from 'components/types';
 import { InputHTMLAttributes, useState } from 'react';
 import { Container, Input, Label } from './styled';
 
 export type CheckboxProps = {
   label?: string;
   labelFor?: string;
-  labelColor?: Colors;
+  labelColor?: TokenColors;
   isChecked?: boolean;
   value?: string | ReadonlyArray<string> | number;
   onCheck?: (status: boolean) => void;

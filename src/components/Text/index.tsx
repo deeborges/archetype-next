@@ -1,60 +1,15 @@
-import { Colors } from 'components/types';
+import { TokenColors, TokenFontWeights, TokenSizes } from 'components/types';
 import { styledText } from './styled';
+import { TextTags, TextTypes } from './types';
 
 export type TextProps = {
   children: string | React.ReactNode;
-  fontSize?:
-    | 'xxsmall'
-    | 'xsmall'
-    | 'small'
-    | 'default'
-    | 'medium'
-    | 'large'
-    | 'xl_2'
-    | 'xl_2_5'
-    | 'xl_3'
-    | 'xl_4'
-    | 'xl_5'
-    | 'xl_6';
-  tag?:
-    | 'label'
-    | 'p'
-    | 'span'
-    | 'hr'
-    | 'pre'
-    | 'b'
-    | 'strong'
-    | 'i'
-    | 'em'
-    | 'sub'
-    | 'sup'
-    | 'ins'
-    | 'del'
-    | 'small'
-    | 'mark';
-  type?:
-    | 'headline'
-    | 'title'
-    | 'subheading-1'
-    | 'subheading-2'
-    | 'body-1'
-    | 'body-2'
-    | 'body-3'
-    | 'caption-1'
-    | 'caption-2'
-    | 'caption-3';
-  weight?:
-    | '100'
-    | '200'
-    | '300'
-    | '400'
-    | '500'
-    | '600'
-    | '700'
-    | '800'
-    | '900';
+  fontSize?: TokenSizes;
+  tag?: TextTags;
+  type?: TextTypes;
+  weight?: TokenFontWeights;
   marginBotton?: string;
-  color?: Colors;
+  color?: TokenColors;
   className?: string;
 };
 

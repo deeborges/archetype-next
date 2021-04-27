@@ -1,4 +1,4 @@
-import { Colors } from 'components/types';
+import { TokenColors } from 'components/types';
 import { InputHTMLAttributes } from 'react';
 
 import * as S from './styled';
@@ -8,7 +8,7 @@ type RadioValue = string | ReadonlyArray<string> | number;
 export type RadioProps = {
   onCheck?: (value?: RadioValue) => void;
   label?: string;
-  labelColor?: Colors;
+  labelColor?: TokenColors;
   labelFor?: string;
   value?: RadioValue;
 } & InputHTMLAttributes<HTMLInputElement>;

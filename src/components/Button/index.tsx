@@ -1,14 +1,14 @@
 import { forwardRef, AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react';
 import { Content, ContentProps } from './styles';
 import { Spinner } from '../Spinner';
-import { ColorsTypes } from '../tokens-types';
+import { ButtonColors } from './types';
 
 type ButtonTypes =
   | AnchorHTMLAttributes<HTMLAnchorElement>
   | ButtonHTMLAttributes<HTMLButtonElement>;
 
 export type ButtonProps = {
-  color?: ColorsTypes;
+  color?: ButtonColors;
   leftIcon?: JSX.Element;
   rightIcon?: JSX.Element;
   loading?: boolean;
