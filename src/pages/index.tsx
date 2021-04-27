@@ -1,9 +1,11 @@
 import * as Icons from 'components/Icons';
 import { Input } from 'components/Input';
+import { Button } from 'noverde-ui';
 
 export default function Home() {
   return (
     <>
+      <Button color="secondary">Ola noverde</Button>
       <Icons.Cloud />
       <Input
         name="deyv"
