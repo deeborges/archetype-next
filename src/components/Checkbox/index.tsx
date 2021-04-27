@@ -8,6 +8,7 @@ export type CheckboxProps = {
   labelColor?: TokenColors;
   isChecked?: boolean;
   value?: string | ReadonlyArray<string> | number;
+  color?: TokenColors;
   onCheck?: (status: boolean) => void;
 } & InputHTMLAttributes<HTMLInputElement>;
 
@@ -18,6 +19,7 @@ export const Checkbox = ({
   labelColor = 'noverde',
   isChecked = false,
   value,
+  color = 'noverde',
   ...props
 }: CheckboxProps) => {
   const [checked, setChecked] = useState(isChecked);
@@ -36,6 +38,7 @@ export const Checkbox = ({
         onChange={onChange}
         checked={checked}
         value={value}
+        color={color}
         {...props}
       />
       {!!label && (

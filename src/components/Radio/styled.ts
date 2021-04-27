@@ -6,15 +6,15 @@ export const Wrapper = styled.div`
   align-items: center;
 `;
 
-export const Input = styled.input`
-  ${({ theme }) => css`
+export const Input = styled.input<RadioProps>`
+  ${({ theme, color }) => css`
     display: flex;
     align-items: center;
     justify-content: center;
     appearance: none;
     width: ${theme.font.size.medium};
     height: ${theme.font.size.medium};
-    border: 0.15rem solid ${theme.colors.primary.noverde};
+    border: 0.15rem solid ${theme.colors.allColors[color!]};
     border-radius: 50%;
     background: transparent;
     transition: background ${theme.transition.fast};
@@ -30,7 +30,7 @@ export const Input = styled.input`
       width: ${theme.font.size.xxsmall};
       height: ${theme.font.size.xxsmall};
       border-radius: 50%;
-      background: ${theme.colors.primary.noverde};
+      background: ${theme.colors.allColors[color!]};
       transition: opacity ${theme.transition.fast};
       opacity: 0;
       position: absolute;

@@ -1,7 +1,6 @@
 import { TokenColors } from 'components/types';
 import { InputHTMLAttributes } from 'react';
-
-import * as S from './styled';
+import { Input, Label, Wrapper } from './styled';
 
 type RadioValue = string | ReadonlyArray<string> | number;
 
@@ -11,6 +10,7 @@ export type RadioProps = {
   labelColor?: TokenColors;
   labelFor?: string;
   value?: RadioValue;
+  color?: TokenColors;
 } & InputHTMLAttributes<HTMLInputElement>;
 
 export const Radio = ({
@@ -19,6 +19,7 @@ export const Radio = ({
   labelColor = 'noverde',
   labelFor = '',
   value,
+  color = 'noverde',
   ...props
 }: RadioProps) => {
   const onChange = () => {
@@ -26,19 +27,20 @@ export const Radio = ({
   };
 
   return (
-    <S.Wrapper>
-      <S.Input
+    <Wrapper>
+      <Input
         id={labelFor}
         type="radio"
         value={value}
         onChange={onChange}
+        color={color}
         {...props}
       />
       {!!label && (
-        <S.Label labelColor={labelColor} htmlFor={labelFor}>
+        <Label labelColor={labelColor} htmlFor={labelFor}>
           {label}
-        </S.Label>
+        </Label>
       )}
-    </S.Wrapper>
+    </Wrapper>
   );
 };

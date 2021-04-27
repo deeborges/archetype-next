@@ -38,7 +38,7 @@ export const Input = styled.input<InputProps>`
       cursor: not-allowed;
     }
     &:focus:invalid {
-      border: 1px solid #e62229;
+      border: 1px solid ${theme.colors.allColors.red500};
     }
     &:focus:valid {
       border: 1px solid #73dcb1;
@@ -56,9 +56,9 @@ export const Input = styled.input<InputProps>`
 
     ${!!message &&
     css`
-      border: 1px solid #e62229;
+      border: 1px solid ${theme.colors.allColors.red500};
       &:focus:valid {
-        border: 1px solid #e62229 !important;
+        border: 1px solid ${theme.colors.allColors.red500} !important;
       }
     `};
   `}
@@ -81,12 +81,12 @@ export const Label = styled.label<InputLabelProps>`
 export type MessageProps = {
   bottom?: string;
   marginTop?: string;
-};
+} & Pick<InputProps, 'message'>;
 
 export const Message = styled.span<MessageProps>`
-  ${() => css`
+  ${({ theme }) => css`
     bottom: 0;
-    color: #e62229;
+    color: ${theme.colors.allColors.red500};
     font-size: 12px;
     left: 0;
     margin-bottom: -20px;

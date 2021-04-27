@@ -1,5 +1,4 @@
-import { Input } from '../Input';
-import Button from '../Button';
+import { Button, Input } from '..';
 import useForm from '../../hooks/useForm';
 
 type FormSignInValues = {

@@ -1,5 +1,5 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
-import Radio, { RadioProps } from '.';
+import { Radio, RadioProps } from '.';
 
 export default {
   title: 'Components/Radio',
@@ -34,6 +34,7 @@ export const Default: Story<RadioProps> = (args) => (
     </div>
     <div style={{ padding: 10 }}>
       <Radio
+        color="galaxy"
         label="terceiro"
         labelFor="terceiro"
         id="terceiro"
