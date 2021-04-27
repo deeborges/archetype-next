@@ -10,13 +10,13 @@ export type TextProps = {
   weight?: TokenFontWeights;
   marginBotton?: string;
   color?: TokenColors;
-  className?: string;
+  id?: string;
 };
 
 export const Text = (props: TextProps) => {
   const TmpText = styledText({ ...props });
   return (
-    <TmpText className={props.className} {...props}>
+    <TmpText id={props.id} {...props}>
       {props.children}
     </TmpText>
   );
