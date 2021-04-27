@@ -7,8 +7,6 @@ export type ContentProps = {
 };
 export const Content = styled.div<ContentProps>`
   ${({ marginBottom, width }) => css`
-    align-items: center;
-    display: flex;
     margin-bottom: ${marginBottom ?? '4px'};
     position: relative;
     transition: 0.5s;
@@ -72,7 +70,7 @@ export type InputLabelProps = {
 export const Label = styled.label<InputLabelProps>`
   ${({ marginBottom, theme }) => css`
     color: #646e7d;
-    font-size: ${theme.font.size.default};
+    font-size: ${theme.font.size.small};
     display: inline-block;
     margin-bottom: ${marginBottom ?? '8px'};
     position: relative;

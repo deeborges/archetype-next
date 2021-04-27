@@ -26,6 +26,7 @@ export type InputProps = {
   placeholder?: string;
   iconLeft?: React.ReactNode;
   iconRight?: React.ReactNode;
+  value?: string | ReadonlyArray<string> | number;
 } & InputHTMLAttributes<HTMLInputElement>;
 
 const InputBase: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
@@ -40,6 +41,7 @@ const InputBase: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
     placeholder,
     iconLeft,
     iconRight,
+    value,
     ...rest
   },
   ref
@@ -60,6 +62,7 @@ const InputBase: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
         message={message}
         iconLeft={iconLeft}
         iconRight={iconRight}
+        value={value}
         {...(label ? { id: name } : {})}
         {...rest}
       />

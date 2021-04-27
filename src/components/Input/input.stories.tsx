@@ -65,4 +65,6 @@ export const DisabledWithValue = () => (
 
 export const WithIconLeft = () => <Input name="icon" iconLeft={<FaEye />} />;
 
-export const WithIconRight = () => <Input name="icon" iconRight={<FaEye />} />;
+export const WithIconRight = () => (
+  <Input name="icon" iconRight={<FaEye />} label="password" />
+);
