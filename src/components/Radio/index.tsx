@@ -13,7 +13,7 @@ export type RadioProps = {
   value?: RadioValue;
 } & InputHTMLAttributes<HTMLInputElement>;
 
-const Radio = ({
+export const Radio = ({
   label,
   onCheck,
   labelColor = 'noverde',
@@ -42,5 +42,3 @@ const Radio = ({
     </S.Wrapper>
   );
 };
-
-export default Radio;

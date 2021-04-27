@@ -1,1 +1,3 @@
-export { default as Spinner } from './styled';
+import SpinnerBase from './styled';
+
+export const Spinner = () => <SpinnerBase />;

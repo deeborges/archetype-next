@@ -19,7 +19,7 @@ export type ButtonProps = {
   as?: React.ElementType;
 } & ButtonTypes;
 
-const Button: React.ForwardRefRenderFunction<ContentProps, ButtonProps> = (
+const ButtonBase: React.ForwardRefRenderFunction<ContentProps, ButtonProps> = (
   {
     as,
     children,
@@ -52,4 +52,4 @@ const Button: React.ForwardRefRenderFunction<ContentProps, ButtonProps> = (
   </Content>
 );
 
-export default forwardRef(Button);
+export const Button = forwardRef(ButtonBase);
