@@ -33,7 +33,7 @@ const modifiers = {
 };
 
 export const Content = styled.button<ContentProps>`
-  ${({ color, height, marginBottom, theme, width }) => css`
+  ${({ color, height, marginBottom, theme, width, leftIcon, rightIcon }) => css`
     align-items: center;
     border: none;
     border-radius: 4px;
@@ -60,5 +60,17 @@ export const Content = styled.button<ContentProps>`
 
     ${!!color && modifiers.colors[color!]};
     ${!!marginBottom && `margin-bottom: ${marginBottom}`};
+    ${!!rightIcon &&
+    css`
+      & > svg {
+        margin-left: 8px;
+      }
+    `};
+    ${!!leftIcon &&
+    css`
+      & > svg {
+        margin-right: 8px;
+      }
+    `};
   `}
 `;

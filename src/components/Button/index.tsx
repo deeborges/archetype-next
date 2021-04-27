@@ -43,12 +43,14 @@ const ButtonBase: React.ForwardRefRenderFunction<ContentProps, ButtonProps> = (
     marginBottom={marginBottom}
     ref={ref}
     width={width}
+    leftIcon={leftIcon}
+    rightIcon={rightIcon}
     {...props}
   >
-    {!!leftIcon && leftIcon}
+    {!!leftIcon && !loading && leftIcon}
     {!!loading && <Spinner />}
     {!!children && <span>{children}</span>}
-    {!!rightIcon && rightIcon}
+    {!!rightIcon && !loading && rightIcon}
   </Content>
 );
 
