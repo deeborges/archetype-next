@@ -1,8 +1,10 @@
+import * as Icons from 'components/Icons';
 import { Input } from 'components/Input';
 
 export default function Home() {
   return (
     <>
+      <Icons.Cloud />
       <Input
         name="deyv"
         type="email"

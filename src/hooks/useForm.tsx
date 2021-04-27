@@ -36,7 +36,6 @@ const useForm = <T extends Record<keyof T, any> = {}>(options?: {
     const value = sanitizeFn ? sanitizeFn(e.target.value) : e.target.value;
     e.persist();
 
-    console.log(key, value);
     setData({
       ...data,
       [key]: value
