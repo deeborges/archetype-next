@@ -1,6 +1,5 @@
-import { Input } from '../Input';
-import Button from '../Button';
-import useForm from 'hooks/useForm';
+import { Button, Input } from 'noverde-ui';
+import useForm from '../../hooks/useForm';
 
 type FormSignInValues = {
   nomeCompleto: string;

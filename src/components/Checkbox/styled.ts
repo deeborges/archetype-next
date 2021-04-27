@@ -6,8 +6,8 @@ export const Container = styled.div`
   align-items: center;
   display: flex;
 `;
-export const Input = styled.input`
-  ${({ theme }) => css`
+export const Input = styled.input<CheckboxProps>`
+  ${({ theme, color }) => css`
     appearance: none;
 
     border: 0.15rem solid ${theme.colors.neutrals.gray700};
@@ -45,8 +45,8 @@ export const Input = styled.input`
     }
 
     &:checked {
-      background: ${theme.colors.primary.noverde};
-      border-color: ${theme.colors.primary.noverde};
+      background: ${theme.colors.allColors[color!]};
+      border-color: ${theme.colors.allColors[color!]};
       box-shadow: none;
 
       &:before {

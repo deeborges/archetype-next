@@ -1,5 +1,6 @@
-import { Meta, Story } from '@storybook/react/types-6-0';
+import { Meta } from '@storybook/react/types-6-0';
 import { Input } from '.';
+import { FaEye } from 'react-icons/fa';
 
 export default {
   title: 'Components/Input',
@@ -60,4 +61,10 @@ export const DisabledWithValue = () => (
     autoFocus
     disabled
   />
+);
+
+export const WithIconLeft = () => <Input name="icon" iconLeft={<FaEye />} />;
+
+export const WithIconRight = () => (
+  <Input name="icon" iconRight={<FaEye />} label="password" />
 );

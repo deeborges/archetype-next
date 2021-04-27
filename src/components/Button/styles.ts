@@ -3,10 +3,7 @@
 import styled, { css } from 'styled-components';
 import { ButtonProps } from '.';
 
-export type ContentProps = Pick<
-  ButtonProps,
-  'color' | 'height' | 'width' | 'marginBottom'
->;
+export type ContentProps = ButtonProps;
 
 const modifiers = {
   colors: {
@@ -36,32 +33,44 @@ const modifiers = {
 };
 
 export const Content = styled.button<ContentProps>`
-  ${({ color, height, width, marginBottom }) => css`
-    justify-content: center;
+  ${({ color, height, marginBottom, theme, width, leftIcon, rightIcon }) => css`
     align-items: center;
     border: none;
     border-radius: 4px;
-    display: flex;
     cursor: pointer;
+    display: flex;
+    font-size: ${theme.font.size.default};
+    font-weight: ${theme.font.weight[700]};
     grid-auto-flow: column;
-    padding: 1rem 1.5rem;
-    width: ${width ?? '320px'};
+    justify-content: center;
     height: ${height ?? '52px'};
     text-decoration: none;
     transition: 0.25s;
-    max-width: 328px;
-
-    @media screen and (max-width: 320px) {
-      width: 232px;
-    }
-
-    ${!!color && modifiers.colors[color!]};
-    ${!!marginBottom && `margin-bottom: ${marginBottom}`};
+    padding: 1rem 1.5rem;
+    width: ${width ?? '100%'};
 
     &:disabled {
       background-color: #c5efd6;
       color: #fff;
       cursor: not-allowed;
+      &:hover {
+        background-color: #c5efd6;
+      }
     }
+
+    ${!!color && modifiers.colors[color!]};
+    ${!!marginBottom && `margin-bottom: ${marginBottom}`};
+    ${!!rightIcon &&
+    css`
+      & > svg {
+        margin-left: 8px;
+      }
+    `};
+    ${!!leftIcon &&
+    css`
+      & > svg {
+        margin-right: 8px;
+      }
+    `};
   `}
 `;

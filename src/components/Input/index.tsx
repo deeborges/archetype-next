@@ -10,30 +10,38 @@ import {
   Label,
   ContentProps,
   MessageProps,
-  InputLabelProps
+  InputLabelProps,
+  Icon,
+  InputWrapper
 } from './styled';
 
 export type InputProps = {
   name: string;
   label?: string;
-  message?: string;
-  contentProps?: ContentProps;
   labelProps?: InputLabelProps;
+  message?: string;
   messageProps?: MessageProps;
+  contentProps?: ContentProps;
   isRequired?: boolean;
   placeholder?: string;
+  iconLeft?: React.ReactNode;
+  iconRight?: React.ReactNode;
+  value?: string | ReadonlyArray<string> | number;
 } & InputHTMLAttributes<HTMLInputElement>;
 
 const InputBase: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
   {
     name,
     label,
-    message,
-    contentProps,
     labelProps,
+    message,
     messageProps,
+    contentProps,
     isRequired = false,
     placeholder,
+    iconLeft,
+    iconRight,
+    value,
     ...rest
   },
   ref
@@ -44,15 +52,22 @@ const InputBase: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
         {label}
       </Label>
     )}
-    <StyledInput
-      data-testid={`cy-${name}`}
-      id={name}
-      name={name}
-      ref={ref}
-      placeholder={`${placeholder ?? ''}${isRequired ? ' *' : ''}`}
-      message={message}
-      {...rest}
-    />
+    <InputWrapper>
+      {!!iconLeft && <Icon iconLeft={iconLeft}>{iconLeft}</Icon>}
+      <StyledInput
+        data-testid={`cy-${name}`}
+        name={name}
+        ref={ref}
+        placeholder={`${placeholder ?? ''}${isRequired ? ' *' : ''}`}
+        message={message}
+        iconLeft={iconLeft}
+        iconRight={iconRight}
+        value={value}
+        {...(label ? { id: name } : {})}
+        {...rest}
+      />
+      {!!iconRight && <Icon iconRight={iconRight}>{iconRight}</Icon>}
+    </InputWrapper>
     {!!message && <Message {...messageProps}>{message}</Message>}
   </Content>
 );

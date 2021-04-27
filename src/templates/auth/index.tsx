@@ -1,4 +1,4 @@
-import { Text } from 'components/Text';
+import { Text } from 'noverde-ui';
 import {
   Container,
   Banner,

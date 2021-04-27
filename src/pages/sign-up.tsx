@@ -1,5 +1,5 @@
-import Auth from 'templates/Auth';
+import Auth from '../templates/auth';
 
 export default function SignUp() {
-  return <Auth title="Sign Up" />;
+  return <Auth />;
 }

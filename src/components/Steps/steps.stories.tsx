@@ -3,7 +3,9 @@ import Steps from '.';
 
 export default {
   title: 'Steps',
-  component: Steps,
+  component: Steps
 } as Meta;
 
-export const Initial: Story = (args) => <Steps />;
+export const Initial: Story = (args) => (
+  <Steps inititalValues={5} currency={3} />
+);

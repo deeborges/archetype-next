@@ -1,14 +1,14 @@
 import { forwardRef, AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react';
 import { Content, ContentProps } from './styles';
 import { Spinner } from '../Spinner';
-import { ColorsTypes } from '../tokens-types';
+import { ButtonColors } from './types';
 
 type ButtonTypes =
   | AnchorHTMLAttributes<HTMLAnchorElement>
   | ButtonHTMLAttributes<HTMLButtonElement>;
 
 export type ButtonProps = {
-  color?: ColorsTypes;
+  color?: ButtonColors;
   leftIcon?: JSX.Element;
   rightIcon?: JSX.Element;
   loading?: boolean;
@@ -19,7 +19,7 @@ export type ButtonProps = {
   as?: React.ElementType;
 } & ButtonTypes;
 
-const Button: React.ForwardRefRenderFunction<ContentProps, ButtonProps> = (
+const ButtonBase: React.ForwardRefRenderFunction<ContentProps, ButtonProps> = (
   {
     as,
     children,
@@ -43,13 +43,15 @@ const Button: React.ForwardRefRenderFunction<ContentProps, ButtonProps> = (
     marginBottom={marginBottom}
     ref={ref}
     width={width}
+    leftIcon={leftIcon}
+    rightIcon={rightIcon}
     {...props}
   >
-    {!!leftIcon && leftIcon}
+    {!!leftIcon && !loading && leftIcon}
     {!!loading && <Spinner />}
     {!!children && <span>{children}</span>}
-    {!!rightIcon && rightIcon}
+    {!!rightIcon && !loading && rightIcon}
   </Content>
 );
 
-export default forwardRef(Button);
+export const Button = forwardRef(ButtonBase);

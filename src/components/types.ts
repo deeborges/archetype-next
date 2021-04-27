@@ -1,4 +1,4 @@
-export type FontSizes =
+export type TokenSizes =
   | 'xxsmall'
   | 'xsmall'
   | 'small'
@@ -12,8 +12,7 @@ export type FontSizes =
   | 'xl_5'
   | 'xl_6';
 
-export type FontTypes = 'subtitle' | 'label' | 'body-1' | 'body-2' | 'caption';
-export type FontWeights =
+export type TokenFontWeights =
   | '100'
   | '200'
   | '300'
@@ -23,9 +22,8 @@ export type FontWeights =
   | '700'
   | '800'
   | '900';
-export type Tags = 'label' | 'p' | 'span';
 
-export type Colors =
+export type TokenColors =
   | 'noverde'
   | 'acqua'
   | 'galaxy'
