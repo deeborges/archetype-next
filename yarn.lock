@@ -9595,7 +9595,7 @@ normalize-range@^0.1.2:
 
 "noverde-ui@https://github.com/noverde/noverde-ui":
   version "0.1.0"
-  resolved "https://github.com/noverde/noverde-ui#cd3c8c9b87ed07a98ca52163460dbcdc8e674564"
+  resolved "https://github.com/noverde/noverde-ui#bf01f02f382b9a4dc3ec902e07eb2d5807bf0b42"
   dependencies:
     styled-components "^5.2.3"
 
@@ -10883,6 +10883,11 @@ react-textarea-autosize@^8.3.0:
     "@babel/runtime" "^7.10.2"
     use-composed-ref "^1.0.0"
     use-latest "^1.0.0"
+
+react-webcam@^5.2.3:
+  version "5.2.3"
+  resolved "https://registry.yarnpkg.com/react-webcam/-/react-webcam-5.2.3.tgz#be1ca38694c31a33220cc8ab9ce341358a03bcbc"
+  integrity sha512-7rBh4Veeumpy45ObkZCsG6zezaamkwK5Iqxc0AFhX2ZzWQZXZ+f61yJ1yIb9Y62U4d7KkfP/xEduBCRzzcN4Dw==
 
 react@17.0.1:
   version "17.0.1"

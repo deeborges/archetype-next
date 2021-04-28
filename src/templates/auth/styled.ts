@@ -17,11 +17,17 @@ export const Container = styled.main`
 
 export const Banner = styled.div`
   ${({ theme }) => css`
+    align-items: center;
     background-image: url(/img/banner_001.png);
     background-size: cover;
     background-position: center center;
     color: ${theme.colors.neutrals.white};
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
     line-height: 1;
+    position: relative;
 
     ${media.lessThan('medium')`
       display: none;
@@ -29,12 +35,10 @@ export const Banner = styled.div`
   `}
 
   img {
-    margin-top: 6rem;
-    justify-self: center;
+    bottom: 7rem;
+    position: absolute;
   }
 `;
-
-export const Subtitle = styled.h3``;
 
 export const ContentForm = styled.div`
   ${({ theme }) => css`
@@ -48,12 +52,6 @@ export const ContentForm = styled.div`
       display: 38rem;
     `}
   `}
-`;
-export const Footer = styled.p`
-  padding: 1.5rem;
-  ${media.lessThan('medium')`
-      display: none;
-    `}
 `;
 
 export const ContentFormWrapper = styled.div`

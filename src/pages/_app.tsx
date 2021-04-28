@@ -1,8 +1,7 @@
 import { AppProps } from 'next/app';
 import Head from 'next/head';
-
+import { DefaultTheme } from 'noverde-ui';
 import { ThemeProvider } from 'styled-components';
-import { DefaultTheme } from 'noverde-ui/lib';
 
 import LayoutGlobal from '../layout/global';
 
