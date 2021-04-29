@@ -1,6 +1,6 @@
 import { AppProps } from 'next/app';
 import Head from 'next/head';
-import { DefaultTheme } from 'noverde-ui';
+import { defaultTheme } from 'noverde-ui';
 import { ThemeProvider } from 'styled-components';
 
 import LayoutGlobal from '../layout/global';
@@ -8,7 +8,7 @@ import LayoutGlobal from '../layout/global';
 function App({ Component, pageProps }: AppProps) {
   return (
     <>
-      <ThemeProvider theme={DefaultTheme}>
+      <ThemeProvider theme={defaultTheme}>
         <Head>
           <title>Next.js archetype.</title>
           <link rel="shortcut icon" href="/assets/favicon.ico" />

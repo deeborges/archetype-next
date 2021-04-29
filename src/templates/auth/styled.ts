@@ -21,7 +21,7 @@ export const Banner = styled.div`
     background-image: url(/img/banner_001.png);
     background-size: cover;
     background-position: center center;
-    color: ${theme.colors.neutrals.white};
+    color: ${theme.colors.white};
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -42,7 +42,7 @@ export const Banner = styled.div`
 
 export const ContentForm = styled.div`
   ${({ theme }) => css`
-    background: ${theme.colors.neutrals.white};
+    background: ${theme.colors.white};
     display: grid;
     align-items: center;
     justify-content: center;

@@ -9593,9 +9593,9 @@ normalize-range@^0.1.2:
   resolved "https://registry.yarnpkg.com/normalize-range/-/normalize-range-0.1.2.tgz#2d10c06bdfd312ea9777695a4d28439456b75942"
   integrity sha1-LRDAa9/TEuqXd2laTShDlFa3WUI=
 
-"noverde-ui@https://github.com/noverde/noverde-ui":
+"noverde-ui@https://github.com/noverde/noverde-ui.git":
   version "0.1.0"
-  resolved "https://github.com/noverde/noverde-ui#bf01f02f382b9a4dc3ec902e07eb2d5807bf0b42"
+  resolved "https://github.com/noverde/noverde-ui.git#1096305753c71d43fc063641898fe207ae464c92"
   dependencies:
     styled-components "^5.2.3"
 
