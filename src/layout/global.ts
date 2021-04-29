@@ -7,8 +7,7 @@ const LayoutGlobal = createGlobalStyle`
     padding: 0;
   }
   html {
-    font-family: 'Roboto' sans-serif;
-    /* font-size: 62.5%; */
+    font-family: 'Open Sans', sans-serif;
   }
 
   html, body, #__next {
@@ -16,8 +15,31 @@ const LayoutGlobal = createGlobalStyle`
   }
 
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+    font-family: 'Open Sans', sans-serif;
   }
+
+  overflow: auto;
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #0CD15B;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  ::-moz-scrollbar {
+    width: 10px;
+  }
+  ::-moz-scrollbar-thumb {
+    background-color: #0CD15B;
+    border-radius: 10px;
+  }
+  ::-moz-scrollbar-track {
+    background-color: transparent;
+  }
+
 `;
 
 export default LayoutGlobal;

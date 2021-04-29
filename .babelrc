@@ -1,7 +1,16 @@
 {
   "presets": ["next/babel", "@babel/preset-typescript"],
   "plugins": [
-    ["babel-plugin-styled-components", { "ssr": true, "displayName": true }]
+    ["babel-plugin-styled-components", { "ssr": true, "displayName": true }],
+    [
+      "module-resolver",
+      {
+        "root": ["./"],
+        "alias": {
+          "~components": "./src/components" //ignore this
+        }
+      }
+    ]
   ],
   "env": {
     "test": {

@@ -1,4 +1,4 @@
-import { Input } from 'components/Input';
+import { Button, Input } from 'noverde-ui';
 
 export default function Home() {
   return (

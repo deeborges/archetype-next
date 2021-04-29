@@ -1,14 +1,7 @@
 const family = {
-  nunito: {
+  open_sans: {
     default:
-      "Nunito Regular, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
-    style: {
-      light: 'Nunito-Light', // no fonts.css = weight 300
-      regular: 'Nunito-Regular', // no fonts.css = weight 400
-      semibold: 'Nunito-Semibold', // no fonts.css = weight 600
-      bold: 'Nunito-Bold', // no fonts.css = weight 700
-      extrabold: 'Nunito-Extrabold' // no fonts.css = weight 800
-    }
+      "Open Sans, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"
   }
 };
 
