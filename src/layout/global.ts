@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { defaultTheme } from 'noverde-ui';
 
 const LayoutGlobal = createGlobalStyle`
   * {
@@ -15,7 +16,9 @@ const LayoutGlobal = createGlobalStyle`
   }
 
   body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: ${defaultTheme.font.default}, sans-serif;
+    font-size: ${defaultTheme.sizes['size-16']};
+    line-height: 1.5;
   }
 
   overflow: auto;

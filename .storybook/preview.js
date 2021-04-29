@@ -1,6 +1,6 @@
 import LayoutGlobal from '../src/layout/global';
 import { ThemeProvider } from 'styled-components';
-import { DefaultTheme } from 'noverde-ui';
+import { defaultTheme } from 'noverde-ui';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' }
@@ -8,7 +8,7 @@ export const parameters = {
 
 export const decorators = [
   (Story) => (
-    <ThemeProvider theme={DefaultTheme}>
+    <ThemeProvider theme={defaultTheme}>
       <LayoutGlobal />
       <Story />
     </ThemeProvider>
