@@ -3,7 +3,7 @@ import { Content } from './styled';
 
 const Legal = () => (
   <Content>
-    <Text fontSize="xsmall">
+    <Text size="size-12">
       Noverde.com.br pertence à Noverde Tecnologia e Pagamentos S/A - CNPJ nº
       23.698.063/0001-69("Noverde"). A Noverde não é uma instituição financeira
       e não realiza operações de crédito diretamente, mas como correspondente

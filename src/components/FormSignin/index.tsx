@@ -137,7 +137,9 @@ const FormSignin = () => {
       <Button type="submit" marginBottom="8px" loading={isSubmitting}>
         próximo
       </Button>
-      <Button color="secondary">voltar para login</Button>
+      <Button type="button" variant="secondary">
+        voltar para login
+      </Button>
     </form>
   );
 };

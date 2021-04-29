@@ -3,7 +3,6 @@ import Legal from '../../components/Legal';
 import {
   Container,
   Banner,
-  Footer,
   ContentForm,
   ContentFormWrapper,
   Wrapper
@@ -20,10 +19,10 @@ const Auth = ({ children }: AuthProps) => (
         <div></div>
         <div>
           <Text type="body-1">fase 01</Text>
-          <Text fontSize="xl_5">
+          <Text size="size-72">
             vamos <br />
             <strong>
-              criar <br /> sua conta
+              criar sua <br /> conta
             </strong>
           </Text>
         </div>
@@ -32,16 +31,22 @@ const Auth = ({ children }: AuthProps) => (
 
       <ContentFormWrapper>
         <ContentForm>
-          <Text fontSize="xl_2" color="galaxy">
+          <Text size="size-32" color="galaxy">
             muito&nbsp;
-            <Text tag="span" fontSize="xl_2" weight="600" color="galaxy">
+            <Text tag="span" size="size-32" weight="weight-600" color="galaxy">
               prazer :)
             </Text>
           </Text>
-          <Text type="body-1" color="gray500">
+          <Text type="body-1" color="gray-500">
             para fazer sua simulação precisamos criar a sua conta.
           </Text>
-          <Text type="body-1" color="gray500" marginBotton="2rem">
+          <Text
+            type="body-1"
+            color="gray-500"
+            custom={{
+              marginBottom: 'size-24'
+            }}
+          >
             É rapidinho!
           </Text>
           {children}

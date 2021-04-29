@@ -4,21 +4,29 @@ import { WebcamCapture } from '../../components/Webcam';
 import { Box, Container, Content, Wrapper } from './styles';
 
 export const CenteredBox = () => {
-  const width = '20rem';
   return (
     <Wrapper>
       <Container>
         <Content>
-          <Text type="title" marginBotton="24px">
+          <Text
+            type="title"
+            custom={{
+              marginBottom: 'size-24'
+            }}
+          >
             Noverde
           </Text>
           <Box>
-            <Text marginBotton={'24px'}>
+            <Text
+              custom={{
+                marginBottom: 'size-24'
+              }}
+            >
               precisamos confirmar sua identidade. Tira uma <b>selfie</b> pra
               gente ;)
             </Text>
             <WebcamCapture css={{ marginBottom: '2rem' }} />
-            <Button width={width} css={{ marginTop: '24px' }}>
+            <Button width="size-20" css={{ marginTop: '24px' }}>
               tirar foto
             </Button>
           </Box>

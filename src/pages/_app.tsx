@@ -6,6 +6,7 @@ import { ThemeProvider } from 'styled-components';
 import LayoutGlobal from '../layout/global';
 
 function App({ Component, pageProps }: AppProps) {
+  console.log(defaultTheme);
   return (
     <>
       <ThemeProvider theme={defaultTheme}>
