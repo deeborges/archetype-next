@@ -48,7 +48,7 @@ export const Input = styled.input<InputProps>`
     &:focus + #animated-label {
       opacity: 1;
       transform: translateY(-3.9rem);
-      transition: ${theme.transition.fast};
+      transition: 0.3s ease-in-out;
     }
 
     ${!!iconLeft &&
