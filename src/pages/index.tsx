@@ -1,7 +1,9 @@
+import { Text } from 'noverde-ui';
+
 export default function Home() {
   return (
     <>
-      <p>Home</p>
+      <Text>Home</Text>
     </>
   );
 }

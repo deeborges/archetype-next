@@ -1,27 +1,20 @@
 {
-  "presets": [
-    "next/babel",
-    "@babel/preset-typescript"
-  ],
+  "presets": ["next/babel", "@babel/preset-typescript"],
   "plugins": [
+    ["babel-plugin-styled-components", { "ssr": true, "displayName": true }],
     [
-      "babel-plugin-styled-components",
+      "module-resolver",
       {
-        "ssr": true,
-        "displayName": true
+        "root": ["./"],
+        "alias": {
+          "~components": "./src/components" //ignore this
+        }
       }
     ]
   ],
   "env": {
     "test": {
-      "plugins": [
-        [
-          "babel-plugin-styled-components",
-          {
-            "ssr": false
-          }
-        ]
-      ]
+      "plugins": [["babel-plugin-styled-components", { "ssr": false }]]
     }
   }
 }

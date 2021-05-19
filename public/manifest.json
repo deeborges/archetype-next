@@ -1,0 +1,16 @@
+{
+  "name": "Archetype Next.js with Typescript",
+  "short_name": "Archetype Next.js",
+  "description": "Next,js with support the TypeScript, React, Jest, Testing Library, Styled Components and Storybook 6",
+  "display": "fullscreen",
+  "start_url": "/",
+  "theme_color": "#141414",
+  "background-color": "#141414",
+  "icons": [
+    {
+      "src": "/assets/favicon.ico",
+      "type": "image/ico",
+      "sizes": "192x192"
+    }
+  ]
+}
