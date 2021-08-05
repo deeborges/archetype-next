@@ -5,7 +5,7 @@ import { ThemeProvider } from 'styled-components';
 function App({ Component, pageProps }: AppProps) {
   return (
     <>
-      <ThemeProvider theme={null}>
+      <ThemeProvider theme={{}}>
         <Head>
           <title>Next.js archetype.</title>
           <link rel="shortcut icon" href="/assets/favicon.ico" />

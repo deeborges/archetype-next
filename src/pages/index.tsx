@@ -1,3 +1,3 @@
 export default function Home() {
-  return <>ola mundo</>;
+  return <h2>ola mundo</h2>;
 }
