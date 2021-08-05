@@ -1,46 +1,41 @@
 {
-  "name": "archtype-next",
-  "version": "0.1.0",
+  "name": "archtype-next-typescript",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint src --max-warnings=0",
-    "test": "jest",
-    "test:watch": "yarn test -u --watch",
+    "test": "jest --maxWorkers=50%",
+    "test:watch": "jest --watch --maxWorkers=25%",
     "test:cover": "yarn test --coverage --watchAll=false",
     "storybook": "start-storybook -s ./public -p 6006",
     "build-storybook": "build-storybook -s ./public",
-    "generate": "yarn plop --plopfile ./generators/plopfile.js",
-    "serviceMock": "npx msw init ./public/ --save",
-    "cy:open": "./node_modules/.bin/cypress open",
-    "cy:run": "./node_modules/.bin/cypress run"
+    "generate": "yarn plop --plopfile ./generators/plopfile.js"
+  },
+  "lint-staged": {
+    "src/**/*": [
+      "yarn lint --fix"
+    ]
   },
   "dependencies": {
-    "@svgr/cli": "^5.5.0",
-    "babel-plugin-module-resolver": "^4.1.0",
-    "cypress": "^7.1.0",
-    "env-cmd": "^10.1.0",
     "next": "10.0.6",
-    "noverde-ui": "https://github.com/noverde/noverde-ui.git",
+    "next-pwa": "^5.2.24",
     "react": "17.0.1",
     "react-dom": "17.0.1",
-    "react-icons": "^4.2.0",
-    "react-webcam": "^5.2.3",
-    "styled-components": "^5.2.1",
-    "styled-media-query": "^2.1.2"
+    "styled-components": "^5.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.13",
-    "@babel/preset-typescript": "^7.12.13",
-    "@storybook/addon-essentials": "^6.2.9",
-    "@storybook/addons": "^6.2.9",
-    "@storybook/react": "^6.2.9",
-    "@storybook/theming": "^6.2.9",
+    "@babel/preset-typescript": "^7.15.0",
+    "@storybook/addon-essentials": "^6.3.6",
+    "@storybook/addons": "^6.3.6",
+    "@storybook/react": "^6.3.6",
+    "@storybook/theming": "^6.3.6",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
-    "@types/jest": "^26.0.20",
+    "@types/jest": "^26.0.24",
     "@types/node": "^14.14.25",
     "@types/react": "^17.0.1",
     "@types/styled-components": "^5.1.7",
@@ -49,17 +44,16 @@
     "babel-loader": "^8.2.2",
     "babel-plugin-styled-components": "^1.12.0",
     "eslint": "^7.19.0",
-    "eslint-config-prettier": "^7.2.0",
-    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "jest": "^26.6.3",
+    "husky": "^7.0.1",
+    "jest": "^27.0.6",
     "jest-styled-components": "^7.0.3",
+    "lint-staged": "^11.1.1",
     "plop": "^2.7.4",
-    "prettier": "^2.2.1",
+    "prettier": "2.3.2",
     "typescript": "^4.1.3"
-  },
-  "msw": {
-    "workerDirectory": "public"
   }
 }

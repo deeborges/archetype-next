@@ -1,9 +1,5 @@
-import { Text } from 'noverde-ui';
+const bla = 'klpj';
 
 export default function Home() {
-  return (
-    <>
-      <Text>Home</Text>
-    </>
-  );
+  return <>ola mundo</>;
 }

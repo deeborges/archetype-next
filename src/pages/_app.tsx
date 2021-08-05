@@ -1,15 +1,11 @@
 import { AppProps } from 'next/app';
 import Head from 'next/head';
-import { defaultTheme } from 'noverde-ui';
 import { ThemeProvider } from 'styled-components';
 
-import LayoutGlobal from '../layout/global';
-
 function App({ Component, pageProps }: AppProps) {
-  console.log(defaultTheme);
   return (
     <>
-      <ThemeProvider theme={defaultTheme}>
+      <ThemeProvider theme={null}>
         <Head>
           <title>Next.js archetype.</title>
           <link rel="shortcut icon" href="/assets/favicon.ico" />
@@ -20,7 +16,7 @@ function App({ Component, pageProps }: AppProps) {
             title="A simple project starter to work with TypeScript, React, Styled Components, Storybook and Next.js"
           />
         </Head>
-        <LayoutGlobal />
+        {/* add a ResetCSS in here */}
         <Component {...pageProps} />
       </ThemeProvider>
     </>
